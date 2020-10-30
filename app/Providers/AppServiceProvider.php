@@ -3,8 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Settings;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -24,9 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view::composer('layouts.master' , function($view) {
+        view::composer('layouts.master', function ($view) {
             // Sharing setting to all view of websites
-           $view->with('settings' , Settings::all()[0]);
+            $settings = Settings::all()[0];
+            $view->with('settings', $settings);
         });
     }
 }
