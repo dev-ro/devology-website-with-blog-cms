@@ -54,8 +54,10 @@
                         <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, quae.</p>
                         <!-- Social Icons -->
                         <ul class="social-icons list-inline pt-2">
-                            @foreach (json_encode($settings->social) as $social)
-                                {{$social}}
+                            {{  $socials = json_encode($settings->social[0]) }}
+                            {{-- {{ var_dump(json_decode($socials, true)) }} --}}
+                            @foreach (json_decode($socials, true) as $social)
+                                {{gettype($social)}}
                             @endforeach
                         </ul>
                     </div>
