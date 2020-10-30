@@ -1,5 +1,5 @@
- <!--====== Footer Area Start ======-->
- <footer class="section footer-area">
+<!--====== Footer Area Start ======-->
+<footer class="section footer-area">
     <!-- Footer Top -->
     <div class="footer-top ptb_100">
         <div class="container">
@@ -53,9 +53,9 @@
                         <h3 class="footer-title text-uppercase mb-2">Follow Us</h3>
                         <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, quae.</p>
                         <!-- Social Icons -->
-                        <ul class="social-icons list-inline pt-2">
-                            @foreach (json_encode($settings->social) as $social)
-                                {{$social}}
+                        <ul class="social-icons d-flex pt-2">
+                            @foreach ($settings->social as $social)
+                            {!! $social['icon'] !!}
                             @endforeach
                         </ul>
                     </div>
@@ -69,7 +69,8 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Copyright Area -->
-                    <div class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4">
+                    <div
+                        class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4">
                         <!-- Copyright Left -->
                         <div class="copyright-left">{!! $settings->copyright !!}</div>
                         <!-- Copyright Right -->
@@ -95,7 +96,8 @@
                         <div class="row">
                             <div class="col-12 pb-3">
                                 <h2 class="search-title mb-3">What are you looking for?</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent diam lacus, dapibus sed imperdiet consectetur.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent diam lacus, dapibus
+                                    sed imperdiet consectetur.</p>
                             </div>
                         </div>
                         <div class="row">
