@@ -15,22 +15,6 @@ class Blog extends Model
         $this->attributes['slug'] = Str::of($value)->slug('-');
     }
 
-    protected static function  booted()
-    {
-        static::creating(function($blog) {
-            if(static::whereSlug($blog->slug)->exists()) {
-                self::updateSlug($blog->id);
-            }
-        });
-    }
-
-
-    protected static function updateSlug($slugid) {
-        $blog = self::find($slugid);
-        $blog->slug = $blog->slug.'-'.$slugid;
-        $blog->save();
-    }
-
     /**
      * Create a new factory instance for the model.
      *
