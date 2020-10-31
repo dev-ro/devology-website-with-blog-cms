@@ -4,8 +4,9 @@ namespace Modules\Blog\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Blog\Entities\Blogcategories;
 
-class BlogDatabaseSeeder extends Seeder
+class SeedFakeBlogcategoriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,9 +15,8 @@ class BlogDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            SeedFakeBlogsTableSeeder::class,
-            SeedFakeBlogcategoriesTableSeeder::class
-        ]);
+        Model::unguard();
+
+        Blogcategories::factory(5)->create();
     }
 }

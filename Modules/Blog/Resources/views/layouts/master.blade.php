@@ -17,6 +17,7 @@
     <div class="main overflow-hidden">
         @include('_.navbar')
         <section id="blog" class="section blog-area ptb_100">
+           
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-3">

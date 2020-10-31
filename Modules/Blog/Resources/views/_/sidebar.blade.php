@@ -17,12 +17,9 @@
             <div class="widget-content">
                 <!-- Category Widget Items -->
                 <ul class="widget-items">
-                    <li><a href="#" class="d-flex py-3"><span>Web Design</span><span class="ml-auto">(14)</span></a></li>
-                    <li><a href="#" class="d-flex py-3"><span>Digital Agency</span><span class="ml-auto">(32)</span></a></li>
-                    <li><a href="#" class="d-flex py-3"><span>Wordpress</span><span class="ml-auto">(27)</span></a></li>
-                    <li><a href="#" class="d-flex py-3"><span>UI Design</span><span class="ml-auto">(18)</span></a></li>
-                    <li><a href="#" class="d-flex py-3"><span>Marketing</span><span class="ml-auto">(15)</span></a></li>
-                    <li><a href="#" class="d-flex py-3"><span>Web Template</span><span class="ml-auto">(29)</span></a></li>
+                    @foreach ($blogcategories as $bcat)
+                    <li><a href="#" class="d-flex py-3"><span>{{$bcat->title}}</span><span class="ml-auto">(14)</span></a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>

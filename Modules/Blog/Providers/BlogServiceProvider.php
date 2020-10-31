@@ -4,6 +4,8 @@ namespace Modules\Blog\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Facades\View;
+use Modules\Blog\Entities\Blogcategories;
 
 class BlogServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,13 @@ class BlogServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
+        view::composer(['blog::index' , 'blog::show-blog'], function ($view) {
+            // Sharing setting to all view of websites
+            $blogcategories = Blogcategories::all();
+            $view->with('blogcategories', $blogcategories);
+        });
+        
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();

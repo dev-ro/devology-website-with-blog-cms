@@ -5,15 +5,12 @@ namespace Modules\Blog\Entities;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-
-class Blog extends Model
+class Blogcategories extends Model
 {
     use HasFactory;
     protected $fillable = [];
 
-    public function setSlugAttribute($value) { 
-        $this->attributes['slug'] = Str::of($value)->slug('-');
-    }
+
 
     /**
      * Create a new factory instance for the model.
@@ -22,6 +19,16 @@ class Blog extends Model
      */
     protected static function newFactory()
     {
-        return \Modules\Blog\Database\Factories\BlogFactory::new();
+        return \Modules\Blog\Database\Factories\BlogcategoryFactory::new();
+    }
+
+    /**
+     * setSlugAttribute function
+     *
+     * @param slug $value
+     *
+     */
+    public function setSlugAttribute($value) { 
+        $this->attributes['slug'] = Str::of($value)->slug('-');
     }
 }
