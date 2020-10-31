@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <title>{{ $settings->website_name ?? config('app.name') }}</title>
-    <meta name="description" content="{{$settings->website_description ?? $settings->tagline}}">
-    <link rel="icon" href="{{ $settings->website_favicon  }}">
+    <title>{{ $company_settings->company_name ?? config('app.name') }}</title>
+    <meta name="description" content="{{$company_settings->company_description ?? $company_settings->tagline}}">
+    <link rel="icon" href="{{ $company_settings->company_favicon  }}">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     @stack('styles')
@@ -18,7 +18,6 @@
     <div class="main overflow-hidden">
         @include('_.navbar')
         @yield('content')
-
         @include('_.footer')
     </div>
     <script src="assets/js/jquery/jquery-3.5.1.min.js"></script>

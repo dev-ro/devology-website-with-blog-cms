@@ -54,8 +54,8 @@
                         <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, quae.</p>
                         <!-- Social Icons -->
                         <ul class="social-icons d-flex pt-2">
-                            @foreach ($settings->social as $social)
-                            {!! $social['icon'] !!}
+                            @foreach ($company_settings->company_social as $social)
+                            <li class="list-inline-item px-1"><a href="{!! $social['url'] !!}">{!! $social['icon'] !!}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -72,7 +72,7 @@
                     <div
                         class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4">
                         <!-- Copyright Left -->
-                        <div class="copyright-left">{!! $settings->copyright !!}</div>
+                        <div class="copyright-left">{!! $company_settings->copyright !!}</div>
                         <!-- Copyright Right -->
                         <div class="copyright-right">Made with <i class="fas fa-heart"></i> By <a href="#">Dev</a></div>
                     </div>

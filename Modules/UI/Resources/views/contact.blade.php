@@ -16,7 +16,7 @@
                         <li class="contact-info shadow-xs color-1 bg-hover active hover-bottom text-center p-5 m-3">
                             <span><i class="fas fa-mobile-alt fa-3x"></i></span>
                             <a class="d-block my-2" href="#">
-                                <h3>+89 (0) 2354 5470091</h3>
+                                <h3>{{$company_settings->company_contact}}</h3>
                             </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </li>
@@ -24,10 +24,10 @@
                         <li class="contact-info shadow-xs color-3 bg-hover active hover-bottom text-center p-5 m-3">
                             <span><i class="fas fa-envelope-open-text fa-3x"></i></span>
                             <a class="d-none d-sm-block my-2" href="#">
-                                <h3>mail@company.com</h3>
+                                <h3>{{$company_settings->company_email}}</h3>
                             </a>
                             <a class="d-block d-sm-none my-2" href="#">
-                                <h3>mail@your company.com</h3>
+                                <h3>{{$company_settings->company_email}}</h3>
                             </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </li>

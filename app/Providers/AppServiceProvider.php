@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Settings;
+use App\Models\Company;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,10 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view::composer('layouts.master', function ($view) {
+        view::composer('*', function ($view) {
             // Sharing setting to all view of websites
-            $settings = Settings::all()[0];
-            $view->with('settings', $settings);
+            $company = Company::all()[0];
+            $view->with('company_settings', $company);
         });
     }
 }

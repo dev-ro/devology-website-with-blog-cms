@@ -2422,9 +2422,9 @@ body.dark,
 }
 
 .pagination > li.active > a {
-    background: linear-gradient(45deg, #af52ed 15%, #8830df 65%);
+    background: #0449c4;
     color: #fff;
-    border: 1px solid #af52ed;
+    border: 1px solid #0449c4;
 }
 
 .pagination li:first-child a,
@@ -2718,13 +2718,6 @@ body.dark,
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.blog .footer-area {
-    background: #191919;
-}
-
-.blog .footer-area .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
 
 /* ******************************
 :: 24.0 ERROR AREA CSS

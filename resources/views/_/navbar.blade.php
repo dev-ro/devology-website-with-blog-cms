@@ -27,10 +27,10 @@
                                 <li class="nav-item"><a href="blog-right-sidebar.html" class="nav-link">Right Sidebar</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('blogs-index')}}">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Our Portfolio</a>
@@ -43,14 +43,7 @@
                         <i class="fas fa-search"></i>
                     </a>
                 </li>
-                <li class="nav-item social">
-                    <a href="#" class="nav-link"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li class="nav-item social">
-                    <a href="#" class="nav-link"><i class="fab fa-twitter"></i></a>
-                </li>
             </ul>
-
             <!-- Navbar Toggler -->
             <ul class="navbar-nav toggle">
                 <li class="nav-item">
@@ -59,7 +52,6 @@
                     </a>
                 </li>
             </ul>
-
             <!-- Navbar Action Button -->
             <ul class="navbar-nav action">
                 <li class="nav-item ml-3">

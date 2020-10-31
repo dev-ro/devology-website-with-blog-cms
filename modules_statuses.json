@@ -2,5 +2,6 @@
     "Admin": true,
     "Theme": true,
     "Spotify": true,
-    "UI": true
+    "UI": true,
+    "Blog": true
 }
