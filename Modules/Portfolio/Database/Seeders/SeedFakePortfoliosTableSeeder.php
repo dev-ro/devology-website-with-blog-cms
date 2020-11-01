@@ -4,8 +4,9 @@ namespace Modules\Portfolio\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Portfolio\Entities\Portfolio;
 
-class PortfolioDatabaseSeeder extends Seeder
+class SeedFakePortfoliosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,9 +16,7 @@ class PortfolioDatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
-        $this->call([
-            SeedFakePortfoliosTableSeeder::class
-        ]);
+        Portfolio::factory(20)->create();
+        
     }
 }
