@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{csrf_token()}}">
-    <title>Blog</title>
-    <meta name="description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia ipsa modi rerum quia quis eius error, voluptas ullam distinctio, expedita, rem sunt. Illo provident, velit quaerat ullam facere voluptatum!" >
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @yield('meta')
     <link rel="icon" href="{{ $company_settings->company_favicon  }}">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
@@ -38,5 +37,4 @@
     <script src="/assets/js/active.js"></script>
     @stack('script')
 </body>
-
 </html>

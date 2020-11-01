@@ -20,12 +20,12 @@ class BlogcategoryFactory extends Factory
     public function definition()
     {
         $title = $this->faker->word();
-       return [
-        'title' => $title,
-        'excerpt' => $this->faker->text(),
-        'image' => $this->faker->imageUrl(),
-        'slug' => $title
-       ];
+        return [
+            'title' => $title,
+            'excerpt' => $this->faker->text(),
+            'image' => $this->faker->imageUrl(),
+            'slug' => $title
+        ];
     }
 }
 

@@ -27,9 +27,9 @@ class BlogServiceProvider extends ServiceProvider
     public function boot()
     {
         
-        view::composer(['blog::index' , 'blog::show-blog'], function ($view) {
+        view::composer('blog::_.sidebar', function ($view) {
             // Sharing setting to all view of websites
-            $blogcategories = Blogcategories::all();
+            $blogcategories = Blogcategories::withCount('blogs')->get();
             $view->with('blogcategories', $blogcategories);
         });
         

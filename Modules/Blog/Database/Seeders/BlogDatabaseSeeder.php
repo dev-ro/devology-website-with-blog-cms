@@ -16,7 +16,8 @@ class BlogDatabaseSeeder extends Seeder
     {
         $this->call([
             SeedFakeBlogsTableSeeder::class,
-            SeedFakeBlogcategoriesTableSeeder::class
+            SeedFakeBlogcategoriesTableSeeder::class,
+            SeedFakeBlogcategoriesBlogsTableSeeder::class
         ]);
     }
 }

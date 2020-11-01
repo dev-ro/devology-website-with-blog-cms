@@ -11,6 +11,16 @@ class Blogcategories extends Model
     protected $fillable = [];
 
 
+    /**
+     * setSlugAttribute function
+     *
+     * @param slug $value
+     *
+     */
+    public function setSlugAttribute($value) { 
+        $this->attributes['slug'] = Str::of($value)->slug('-');
+    }
+
 
     /**
      * Create a new factory instance for the model.
@@ -22,13 +32,9 @@ class Blogcategories extends Model
         return \Modules\Blog\Database\Factories\BlogcategoryFactory::new();
     }
 
-    /**
-     * setSlugAttribute function
-     *
-     * @param slug $value
-     *
-     */
-    public function setSlugAttribute($value) { 
-        $this->attributes['slug'] = Str::of($value)->slug('-');
+
+    public function blogs() {
+        return $this->belongsToMany(Blog::class, 'blogcategories_blogs');
     }
+    
 }

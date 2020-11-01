@@ -24,4 +24,9 @@ class Blog extends Model
     {
         return \Modules\Blog\Database\Factories\BlogFactory::new();
     }
+
+    public function blogcategories() {
+        return $this->belongsToMany(Blogcategories::class, 'blogcategories_blogs');
+    }
+
 }

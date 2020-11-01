@@ -96,13 +96,12 @@
                         <div class="row">
                             <div class="col-12 pb-3">
                                 <h2 class="search-title mb-3">What are you looking for?</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent diam lacus, dapibus
-                                    sed imperdiet consectetur.</p>
+                                <p>Jobs, Blogs, Services</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 input-group">
-                                <input type="text" class="form-control" placeholder="Enter your keywords">
+                                <input type="text" class="form-control" placeholder="Jobs, Blogs, Services..">
                             </div>
                         </div>
                         <div class="row">

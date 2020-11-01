@@ -1,4 +1,11 @@
 @extends('blog::layouts.master')
+@section('meta')
+@include('ui::meta' , [
+    'title' => $blog->title,
+    'description' => $blog->excerpt,
+    'simg' => $blog->ft_img
+])
+@endsection
 @section('content')
 <article class="single-blog-details">
     <!-- Blog Thumb -->
@@ -6,7 +13,7 @@
         <a href="{{ route('blog-show-single' , $blog->title)}}"><img src="{{$blog->ft_img}}" alt="{{ $blog->title }}"></a>
     </div>
     <!-- Blog Content -->
-    <div class="blog-content digimax-blog p-3">
+    <div class="blog-content wd-blog p-3">
         <!-- Meta Info -->
         <div class="meta-info d-flex flex-wrap align-items-center py-2">
             <ul>
@@ -36,7 +43,7 @@
         <!-- Blog Details -->
         <div class="blog-details">
             <h3 class="blog-title py-3"><a href="{{ route('blog-show-single' , $blog->title)}}">{{$blog->title}}</a></h3>
-            <p class="d-none d-sm-block">{{$blog->description}}</p>
+            <p>{{$blog->description}}</p>
           
         </div>
     </div>

@@ -15,11 +15,15 @@ class PageController extends Controller
     }
 
     public function contact() {
-        return view('pages.contact');
+        return view('pages.contact', [
+            'title' => 'Contact Us',
+        ]);
     }
 
     public function about() {
-        return view('pages.about');
+        return view('pages.about', [
+            'title' => 'About Us',
+        ]);
     }
 
 }

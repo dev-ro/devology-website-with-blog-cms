@@ -18,7 +18,7 @@
                 <!-- Category Widget Items -->
                 <ul class="widget-items">
                     @foreach ($blogcategories as $bcat)
-                    <li><a href="#" class="d-flex py-3"><span>{{$bcat->title}}</span><span class="ml-auto">(14)</span></a></li>
+                    <li><a href="{{route('blogs-category-show' , $bcat->slug)}}" class="d-flex py-3"><span>{{$bcat->title}}</span><span class="ml-auto">({{$bcat->blogs_count}})</span></a></li>
                     @endforeach
                 </ul>
             </div>
@@ -82,31 +82,6 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Single Widget -->
-    <div class="single-widget">
-        <!-- Tags Widget -->
-        <div class="widget tags-widget">
-            <h5 class="text-uppercase d-block py-3">Popular Tags</h5>
-            <!-- Tags Widget Content -->
-            <div class="widget-content">
-                <!-- Tags Widget Items -->
-                <div class="widget-content tags-widget-items pt-2">
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Digimax</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Bootstrap</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Agency</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Marketing</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Landing Page</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Business</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Fashion</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Media</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Lifestyle</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Wordpress</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Web Design</a>
-                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Mobile App</a>
-                </div>
             </div>
         </div>
     </div>

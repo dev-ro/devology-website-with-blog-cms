@@ -14,4 +14,6 @@
 Route::prefix('blog')->group(function() {
     Route::get('/{slug}' , 'BlogController@showBlog')->name('blog-show-single');
     Route::get('/', 'BlogController@index')->name('blogs-index');
+    Route::get('/categories', 'BlogController@categoriesIndex')->name('blogs-categories-index');
+    Route::get('/categories/{catslug}', 'BlogController@listCategoryWithBlogs')->name('blogs-category-show');
 });

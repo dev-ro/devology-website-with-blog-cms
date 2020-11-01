@@ -1,8 +1,14 @@
-@extends('blog::layouts.master')
 
+@extends('blog::layouts.master')
+@section('meta')
+@include('ui::meta' , [
+    'title' => 'Blogs',
+    'description' => 'Find all the blogs'
+])
+@endsection
 @section('content')
  <!-- ***** Blog Area Start ***** -->
- <div class="row">
+<div class="row">
     @foreach ($blogs as $blog)
     <div class="col-12 col-md-6">
         <!-- Single Blog -->

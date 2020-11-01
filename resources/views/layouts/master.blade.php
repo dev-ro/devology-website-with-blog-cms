@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <title>{{ $company_settings->company_name ?? config('app.name') }}</title>
-    <meta name="description" content="{{$company_settings->company_description ?? $company_settings->tagline}}">
+    @include('ui::meta')
     <link rel="icon" href="{{ $company_settings->company_favicon  }}">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
