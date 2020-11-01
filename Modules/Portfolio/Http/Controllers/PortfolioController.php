@@ -17,7 +17,20 @@ class PortfolioController extends Controller
     {
         $portfolios = Portfolio::paginate(10);
         return view('portfolio::index', [
-            'portfolios' => $portfolios
+            'portfolios' => $portfolios,
+            'title' => 'Portfolio'
+        ]);
+    }
+    /**
+     * Display a Silge Portfolio resource.
+     * @return Renderable
+     */
+    public function singlePortfolio($slug)
+    {
+        $portfolios = Portfolio::paginate(10);
+        return view('portfolio::index', [
+            'portfolios' => $portfolios,
+            'title' => 'Portfolio'
         ]);
     }
 }
