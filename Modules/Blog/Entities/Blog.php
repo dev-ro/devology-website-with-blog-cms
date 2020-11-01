@@ -2,9 +2,10 @@
 
 namespace Modules\Blog\Entities;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Blog extends Model
 {
@@ -27,6 +28,14 @@ class Blog extends Model
 
     public function blogcategories() {
         return $this->belongsToMany(Blogcategories::class, 'blogcategories_blogs');
+    }
+
+    public static function boot() {
+        parent::boot();
+        // Get Results By ID in Descending order
+        static::addGlobalScope('reverse' , function(Builder $builder){
+            $builder->orderBy('id' , 'DESC');
+        });
     }
 
 }

@@ -27,10 +27,9 @@ class PortfolioController extends Controller
      */
     public function singlePortfolio($slug)
     {
-        $portfolios = Portfolio::paginate(10);
-        return view('portfolio::index', [
-            'portfolios' => $portfolios,
-            'title' => 'Portfolio'
+        $portfolio = Portfolio::whereSlug($slug)->first();
+        return view('portfolio::single-portfolio', [
+            'portfolio' => $portfolio,
         ]);
     }
 }

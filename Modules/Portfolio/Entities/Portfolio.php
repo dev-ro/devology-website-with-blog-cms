@@ -2,6 +2,7 @@
 
 namespace Modules\Portfolio\Entities;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -37,6 +38,14 @@ class Portfolio extends Model
 
     public function singleLink() {
         return route('single-portfolio-show' , $this->slug);
+    }
+
+    public static function boot() {
+        parent::boot();
+        // Get Results By ID in Descending order
+        static::addGlobalScope('reverse' , function(Builder $builder){
+            $builder->orderBy('id' , 'DESC');
+        });
     }
 
 }

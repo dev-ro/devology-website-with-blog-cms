@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('meta')
+@include('ui::meta' )
+@endsection
 @section('content')
     <!-- ***** About Area Start ***** -->
     <section class="section about-area ptb_100">

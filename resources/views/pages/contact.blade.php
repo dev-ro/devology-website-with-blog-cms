@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('meta')
+@include('ui::meta' )
+@endsection
 @section('content')
     @include('ui::contact' , [
         'company_settings' => $company_settings
