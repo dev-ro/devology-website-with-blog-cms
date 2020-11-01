@@ -33,7 +33,7 @@
                     <a class="nav-link" href="{{route('blogs-index')}}">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Our Portfolio</a>
+                    <a class="nav-link" href="{{route('portfolio-index')}}">Our Portfolio</a>
                 </li>
             </ul>
             <!-- Navbar Icons -->

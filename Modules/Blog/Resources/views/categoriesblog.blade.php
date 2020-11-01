@@ -21,20 +21,10 @@
                 <div class="blog-details">
                    <div class="d-flex justify-content-between">
                     <h3 class="blog-title py-3"><a href="{{ route('blogs-categories-index' , $categorywithblogs->title)}}">{{$categorywithblogs->title}}</a></h3>
-                    <div class="social-icons d-flex justify-content-center">
-                        <a class="bg-white facebook" href="#">
-                            <i class="fab fa-facebook-f"></i>
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="bg-white twitter" href="#">
-                            <i class="fab fa-twitter"></i>
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="bg-white google-plus" href="#">
-                            <i class="fab fa-google-plus-g"></i>
-                            <i class="fab fa-google-plus-g"></i>
-                        </a>
-                    </div>
+                    @include('ui::socialshare' , [
+                        'fblink' =>route('blogs-categories-index' , $categorywithblogs->slug),
+                        'twlink' =>route('blogs-categories-index' , $categorywithblogs->slug)
+                    ])
                    </div>
                     <p class="">{{$categorywithblogs->excerpt}}</p>
                     <div class="blog-share ml-auto d-none d-sm-block">
