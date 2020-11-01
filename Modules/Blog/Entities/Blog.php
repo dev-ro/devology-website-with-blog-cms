@@ -1,7 +1,6 @@
 <?php
 
 namespace Modules\Blog\Entities;
-
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;

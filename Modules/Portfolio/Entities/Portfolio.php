@@ -12,7 +12,6 @@ class Portfolio extends Model
     use HasFactory;
     protected $fillable = [];
 
-
     /**
      * Create a new factory instance for the model.
      *
@@ -22,9 +21,7 @@ class Portfolio extends Model
     {
         return \Modules\Portfolio\Database\Factories\PortfolioFactory::new();
     }
-
-
-
+    
     /**
      * setSlugAttribute function
      *
