@@ -38,20 +38,21 @@
                 <!-- Contact Box -->
                 <div class="contact-box text-center">
                     <!-- Contact Form -->
-                    <form id="contact-form" method="POST" action="assets/php/mail.php">
+                    <form id="contact-form" method="POST" action="{{route('enquire')}}">
+                        @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
                                     <input type="text" class="form-control shadow-xs" name="name" placeholder="Name" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control shadow-xs" name="name" placeholder="Company Name" required="required">
+                                    <input type="text" class="form-control shadow-xs" name="company_name" placeholder="Company Name" required="required">
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control shadow-xs" name="email" placeholder="Email" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control shadow-xs" name="subject" placeholder="Phone" required="required">
+                                    <input type="text" class="form-control shadow-xs" name="phone" placeholder="Phone" required="required">
                                 </div>
                             </div>
                             <div class="col-12">
