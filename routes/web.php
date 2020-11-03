@@ -17,3 +17,8 @@ Route::get('/' , 'PageController@index')->name('home.index');
 Route::get('/contact' , 'PageController@contact')->name('pages_contact');
 Route::get('/about' , 'PageController@about')->name('pages_about');
 Route::get('/search' , 'SearchController@searchBy')->name('search');
+Route::post('/search' , 'SearchController@searchBy')->name('search');
+
+
+// Enquiry Controller
+Route::post('enquire' , 'EnquiryController@enquire')->name('enquire');
