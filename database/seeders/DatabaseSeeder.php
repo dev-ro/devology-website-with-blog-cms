@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             [
                 CompanySeeder::class,
                 TeamSeeder::class,
+                TestimonialSeeder::class,
                 BlogDatabaseSeeder::class,
                 PortfolioDatabaseSeeder::class,
                 ServicesDatabaseSeeder::class

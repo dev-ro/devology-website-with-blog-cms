@@ -205,5 +205,6 @@ c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
         </div>
     </div>
 </section>
+<x-testimonial />
 @include('ui::calltoaction')
 @endsection
