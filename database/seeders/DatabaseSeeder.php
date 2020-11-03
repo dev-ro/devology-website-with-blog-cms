@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
+use Modules\Blog\Database\Seeders\BlogDatabaseSeeder;
+use Modules\Portfolio\Database\Seeders\PortfolioDatabaseSeeder;
+use Modules\Services\Database\Seeders\ServicesDatabaseSeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,7 +17,10 @@ class DatabaseSeeder extends Seeder
         $this->call(
             [
                 CompanySeeder::class,
-                TeamSeeder::class
+                TeamSeeder::class,
+                BlogDatabaseSeeder::class,
+                PortfolioDatabaseSeeder::class,
+                ServicesDatabaseSeeder::class
             ]
         );
     }

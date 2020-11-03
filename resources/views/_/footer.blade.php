@@ -10,11 +10,11 @@
                         <!-- Footer Title -->
                         <h3 class="footer-title text-uppercase mb-2">About Us</h3>
                         <ul>
-                            <li class="py-2"><a class="text-black-50" href="#">Company Profile</a></li>
-                            <li class="py-2"><a class="text-black-50" href="#">Testimonials</a></li>
-                            <li class="py-2"><a class="text-black-50" href="#">Careers</a></li>
-                            <li class="py-2"><a class="text-black-50" href="#">Partners</a></li>
-                            <li class="py-2"><a class="text-black-50" href="#">Affiliate Program</a></li>
+                            <li class="py-2"><a class="text-black-50" href="{{route('pages_about')}}">Company Profile</a></li>
+                            <li class="py-2"><a class="text-black-50" href="{{route('portfolio-index')}}">Portfolio</a></li>
+                            <li class="py-2"><a class="text-black-50" href="#testimonials">Testimonials</a></li>
+                            <li class="py-2"><a class="text-black-50" href="{{route('services-index')}}">Services</a></li>
+                            <li class="py-2"><a class="text-black-50" href="{{route('blogs-index')}}">Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -24,11 +24,11 @@
                         <!-- Footer Title -->
                         <h3 class="footer-title text-uppercase mb-2">Services</h3>
                         <ul>
-                            <li class="py-2"><a class="text-black-50" href="#">Web Application</a></li>
-                            <li class="py-2"><a class="text-black-50" href="#">Product Management</a></li>
-                            <li class="py-2"><a class="text-black-50" href="#">User Interaction Design</a></li>
-                            <li class="py-2"><a class="text-black-50" href="#">UX Consultant</a></li>
-                            <li class="py-2"><a class="text-black-50" href="#">Social Media Marketing</a></li>
+                            @foreach ($company_services as $service)
+                            @if($service->show_footer_menu)
+                                <li class="py-2"><a class="text-black-50" href="{{route('service-detail' , $service->slug)}}">{{ $service->name }}</a></li>
+                            @endif     
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                             <li class="py-2"><a class="text-black-50" href="#">Terms &amp; Conditions</a></li>
                             <li class="py-2"><a class="text-black-50" href="#">Privacy Policy</a></li>
                             <li class="py-2"><a class="text-black-50" href="#">Help Center</a></li>
-                            <li class="py-2"><a class="text-black-50" href="#">Contact Us</a></li>
+                            <li class="py-2"><a class="text-black-50" href="{{route('pages_contact')}}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     <div class="footer-items">
                         <!-- Footer Title -->
                         <h3 class="footer-title text-uppercase mb-2">Follow Us</h3>
-                        <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, quae.</p>
+                        <p class="mb-2">Follow us to know us.</p>
                         <!-- Social Icons -->
                         <ul class="social-icons d-flex pt-2">
                             @foreach ($company_settings->company_social as $social)
@@ -74,7 +74,7 @@
                         <!-- Copyright Left -->
                         <div class="copyright-left">{!! $company_settings->copyright !!}</div>
                         <!-- Copyright Right -->
-                        <div class="copyright-right">Made with <i class="fas fa-heart"></i> By <a href="#">Dev</a></div>
+                        <div class="copyright-right">Made with By <a href="#">Dev</a></div>
                     </div>
                 </div>
             </div>
@@ -91,17 +91,26 @@
                 Search <i class="far fa-times-circle icon-close"></i>
             </div>
             <div class="modal-body">
-                <form class="row">
+                <form class="row"  method="GET" action="{{route('search')}}">
                     <div class="col-12 align-self-center">
                         <div class="row">
                             <div class="col-12 pb-3">
                                 <h2 class="search-title mb-3">What are you looking for?</h2>
-                                <p>Jobs, Blogs, Services</p>
+                                <p>Services, Blogs</p>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col-12 input-group">
+                                <select class="form-control" name="type" id="">
+                                    <option value="">Search In</option>
+                                    <option value="blogs">Blogs</option>
+                                    <option value="services">Services</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 input-group">
-                                <input type="text" class="form-control" placeholder="Jobs, Blogs, Services..">
+                                <input type="text" name="search" class="form-control" placeholder="Services, Blogs">
                             </div>
                         </div>
                         <div class="row">

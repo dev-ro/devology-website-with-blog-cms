@@ -13,12 +13,15 @@
                     <a class="nav-link" href="/">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/about" class="nav-link">About</a>
+                    <a href="{{route('pages_about')}}" class="nav-link">About</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#">Services <i class="fas fa-angle-down ml-1"></i></a>
+                    <a class="nav-link" href="{{route('services-index')}}">Services <i class="fas fa-angle-down ml-1"></i></a>
                     <ul class="dropdown-menu">
-                        <li class="nav-item dropdown">
+                       @foreach ($company_services as $service)
+                       <li class="nav-item"> <a class="nav-link" href="{{route('service-detail' , $service->slug)}}">{{$service->name}}</a></li>
+                       @endforeach
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-link" href="#">Blog Grid <i class="fas fa-angle-right ml-1"></i></a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a href="blog-two-column.html" class="nav-link">Grid 2 Column</a></li>
@@ -26,7 +29,7 @@
                                 <li class="nav-item"><a href="blog-left-sidebar.html" class="nav-link">Left Sidebar</a></li>
                                 <li class="nav-item"><a href="blog-right-sidebar.html" class="nav-link">Right Sidebar</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -55,7 +58,7 @@
             <!-- Navbar Action Button -->
             <ul class="navbar-nav action">
                 <li class="nav-item ml-3">
-                    <a href="/contact" class="btn ml-lg-auto"><i class="fas fa-paper-plane contact-icon mr-md-2"></i>Contact Us</a>
+                    <a href="{{route('pages_contact')}}" class="btn ml-lg-auto"><i class="fas fa-paper-plane contact-icon mr-md-2"></i>Contact Us</a>
                 </li>
             </ul>
         </div>

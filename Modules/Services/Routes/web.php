@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/' , 'PageController@index')->name('home.index');
-Route::get('/contact' , 'PageController@contact')->name('pages_contact');
-Route::get('/about' , 'PageController@about')->name('pages_about');
-Route::get('/search' , 'SearchController@searchBy')->name('search');
+Route::prefix('services')->group(function() {
+    Route::get('/{slug}' , 'Servicescontroller@singleService')->name('service-detail');
+    Route::get('/', 'ServicesController@index')->name('services-index');
+});

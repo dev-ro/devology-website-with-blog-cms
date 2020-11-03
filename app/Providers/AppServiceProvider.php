@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Company;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Modules\Services\Entities\Service;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,8 +28,10 @@ class AppServiceProvider extends ServiceProvider
     {
         view::composer('*', function ($view) {
             // Sharing setting to all view of websites
-            $company = Company::all()[0];
+            $company    = Company::all()[0];
+            $services   = Service::all();
             $view->with('company_settings', $company);
+            $view->with('company_services', $services);
         });
     }
 }
