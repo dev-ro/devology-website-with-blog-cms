@@ -4,6 +4,7 @@ namespace Modules\Admin\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\View\View;
 
 class AdminServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,7 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();

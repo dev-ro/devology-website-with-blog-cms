@@ -38,10 +38,10 @@ class CompanySeeder extends Seeder
             'tagline' => 'Devology',
             'copyright' => '&copy; Copyrights '. date('Y') .' Dev All rights reserved.',
             'company_description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iusto accusamus dolorum vero exercitationem excepturi, similique et aspernatur saepe ipsa modi quisquam odio eius iure labore quas rem quidem maxime.',
-            'company_social' => $social,
-            'company_email' => 'dev.rohit256@gmail.com',
-            'company_contact' => '+917779834191',
-            'company_address' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, ipsum.',
+            'company_social'    => $social,
+            'company_email'     => 'dev.rohit256@gmail.com',
+            'company_contact'   => '+917779834191',
+            'company_address'   => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, ipsum.',
         ]);
     }
 }

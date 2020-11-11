@@ -4,7 +4,11 @@
         <div class="container header">
             <!-- Navbar Brand-->
             <a class="navbar-brand" href="/">
-               <h3>Dev</h3>
+               @if ( $company_settings->company_logo !== '' )
+                   <img src="/storage/{{$company_settings->company_logo}}" alt="{{$company_settings->company_name}}" class="img-fluid">
+               @else
+                   <h3>{{$company_settings->company_name}}</h3>
+               @endif
             </a>
             <div class="ml-auto"></div>
             <!-- Navbar -->

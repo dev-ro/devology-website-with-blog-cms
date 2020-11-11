@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{csrf_token()}}">
     @yield('meta')
-    <link rel="icon" href="{{ $company_settings->company_favicon  }}">
+    
+    <link rel="icon" href="{{'/storage/'.$company_settings->company_favicon  }}">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
     @stack('styles')

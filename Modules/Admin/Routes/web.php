@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +11,13 @@
 |
 */
 
-Route::prefix('admin')->group(function() {
-    Route::get('/', 'AdminController@index');
+Route::prefix('admin/')->group(function() {
+    Route::get('/' , 'AdminController@redirectToLogin');
+    Route::get('/dashboard', 'AdminController@index')->name('dashboard-home');  
+    
+    // Settings
+    Route::prefix('settings')->group(function() {
+        Route::get('/company-settings' , 'CompanySettingsController@index')->name('company-settings');
+        Route::put('/company-settings' , 'CompanySettingsController@update')->name('company-settings-post-method-update');
+    });
 });
