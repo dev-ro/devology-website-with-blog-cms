@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use App\Http\Controllers\UploadController;
 use App\Models\Company;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ use Illuminate\Validation\ValidationException;
 class CompanySettingsController extends BaseController
 {
     
+    protected string $updir = 'configuration';
     /**
      * Display a company settings form
      * @return Renderable
@@ -39,7 +41,7 @@ class CompanySettingsController extends BaseController
 
         // Check if company logo file exit
         if( $request->has('company_logo') ) {
-            $logo = $this->uploadCompanyAssetsFile($request->file('company_logo'), 'company_logo');
+            $logo = UploadController::uploadPlease($request->file('company_logo') , $this->updir);
             $attributes = array_merge($attributes , [
                 'company_logo' => $logo
             ]);
@@ -47,7 +49,7 @@ class CompanySettingsController extends BaseController
 
         // Check if company favicon file exit
         if( $request->has('company_favicon') ) {
-            $favicon = $this->uploadCompanyAssetsFile($request->file('company_favicon'), 'favicon');
+            $favicon = UploadController::uploadPlease($request->file('company_favicon') , $this->updir);
             $attributes = array_merge($attributes , [
                 'company_favicon' => $favicon
             ]);
@@ -63,19 +65,6 @@ class CompanySettingsController extends BaseController
             ->with('error' , 'Something went wrong');
     }
 
-
-    /**
-     * Upload Company Assets File
-     *
-     * @param mixed  $file
-     * @param string $name
-     *
-     * @return void
-     */
-    protected function uploadCompanyAssetsFile($file, $name) {
-       $file->storeAs('public/uploads/company' , $name.'.'.$file->getClientOriginalExtension());
-       return 'uploads/company'.'/'. $name.'.'.$file->getClientOriginalExtension();
-    }
     
     
 }

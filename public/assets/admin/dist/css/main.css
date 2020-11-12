@@ -1,0 +1,8 @@
+table thead {
+    font-weight: 400 !important;
+
+}
+
+table thead tr th {
+    padding: 0;
+}

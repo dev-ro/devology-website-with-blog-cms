@@ -20,4 +20,14 @@ Route::prefix('admin/')->group(function() {
         Route::get('/company-settings' , 'CompanySettingsController@index')->name('company-settings');
         Route::put('/company-settings' , 'CompanySettingsController@update')->name('company-settings-post-method-update');
     });
+
+    // Testimonials
+    Route::prefix('testimonials')->group(function(){
+        Route::get('/' , 'TestimonialsController@index')->name('testimonials-index');
+        Route::get('/create' , 'TestimonialsController@create')->name('testimonials-create');
+        Route::post('/store' , 'TestimonialsController@store')->name('testimonials-store');
+        Route::get('/edit/{id}' , 'TestimonialsController@edit')->name('testimonials-edit');
+        Route::patch('/update/{id}' , 'TestimonialsController@update')->name('testimonials-update');
+        Route::delete('/delete/{id}' , 'TestimonialsController@destroy')->name('testimonials-delete');
+    });
 });

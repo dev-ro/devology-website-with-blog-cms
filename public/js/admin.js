@@ -94,7 +94,31 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 // JSON Editor JS
-__webpack_require__(/*! ./jsoneditor */ "./Resources/assets/js/jsoneditor.js");
+__webpack_require__(/*! ./jsoneditor */ "./Resources/assets/js/jsoneditor.js"); // Functions file
+
+
+__webpack_require__(/*! ./functions */ "./Resources/assets/js/functions.js");
+
+/***/ }),
+
+/***/ "./Resources/assets/js/functions.js":
+/*!******************************************!*\
+  !*** ./Resources/assets/js/functions.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// delete form submission
+function d(e) {
+  e.preventDefault();
+  var check = confirm('are you sure?');
+
+  if (check) {
+    return true;
+  }
+
+  return false;
+}
 
 /***/ }),
 

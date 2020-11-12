@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'name' => 'Admin'
+    'name' => 'Admin',
+    'image_placeholder' => storage_path('public/default.jpg')
 ];
