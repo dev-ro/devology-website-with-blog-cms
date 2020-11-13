@@ -8,7 +8,13 @@ const socbtn = document.querySelector('.csocbtn');
 const socialEditor = document.getElementById("company_social_json");
 const Socialoptions = {
     mode: 'code',
-    onValidationError: showError(errors)
+    onValidationError: function showError(errors){
+        if(errors.length > 0) {
+            socbtn.disabled = true;
+        } else {
+            socbtn.disabled = false;
+        }
+    }
 };
 const socialJsoneditor = new JsonEditor(socialEditor, Socialoptions);
 
@@ -17,13 +23,13 @@ const socialIconValue =  document.getElementById('company_social').value;
 const json = JSON.parse(socialIconValue);
 socialJsoneditor.set(json);
 
-function showError(errors){
-    if(errors.length > 0) {
-        socbtn.disabled = true;
-    } else {
-        socbtn.disabled = false;
-    }
-};
+// function showError(errors){
+//     if(errors.length > 0) {
+//         socbtn.disabled = true;
+//     } else {
+//         socbtn.disabled = false;
+//     }
+// };
 
 
 socbtn.addEventListener('click' , function(e) {

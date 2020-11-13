@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
         <label for="blog_description">Blog Description</label>
-        <textarea name="blog_description" id="blog_description" class="form-control" cols="30" rows="5" placeholder="Blog Description">@if(isset($blog->description)){{$blog->description}}@else{{old('blog_description')}}@endif</textarea>
+        <wsy-editor textarea_name='blog_description' content='@if(isset($blog->description)){{$blog->description}}@else{{old('blog_description')}}@endif' />
     </div>
     <div class="form-group">
         <label for="blog_image">Blog Image</label>

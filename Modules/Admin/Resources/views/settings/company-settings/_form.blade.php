@@ -57,7 +57,7 @@
        <div class="form-group">
          <label for="company_social">Company Social</label>
          <textarea name="company_social" id="company_social" hidden  cols="30" rows="4" class="form-control" placeholder="Company Social" >{!! json_encode($company_settings->company_social) !!}</textarea>
-         <div id="company_social_json" style="height:400px;"></div>
+         <div id="company_social_json" style="height:400px;width:auto;"></div>
        </div>
        <div class="form-group">
          <label for="copyright">Copyright Text</label>

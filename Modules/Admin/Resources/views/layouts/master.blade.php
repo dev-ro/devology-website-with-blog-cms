@@ -58,6 +58,7 @@
         <!-- AdminLTE App -->
         <script src="/assets/admin/dist/js/adminlte.min.js"></script>
         <script src="/js/admin.js"></script>
-        @stack('script')
+        @yield('scripts')
+        @stack('scripts')
     </body>
 </html>

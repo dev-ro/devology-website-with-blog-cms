@@ -53,6 +53,7 @@ class BlogController extends BaseController
      */
     public function store(Request $request)
     {
+        dd($request->all());
         // Validation
         $validation = $request->validate($this->blogs::VALIDATION);
 
