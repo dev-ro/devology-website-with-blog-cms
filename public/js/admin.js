@@ -2526,6 +2526,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'WySyWig',
@@ -2544,7 +2546,22 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     'editor': _tinymce_tinymce_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  methods: {},
+  methods: {
+    uploadExtraImage: function uploadExtraImage(blobInfo, success, failure, progress) {
+      console.log(blobInfo);
+      var form = new FormData();
+      form.append('file', blobInfo.blob(), blobInfo.filename());
+      axios.post('/admin/upload', form, {
+        headers: {
+          'content-type': "multipart/form-data; boundary=".concat(form._boundary)
+        }
+      }).then(function (res) {
+        success(res.data);
+      })["catch"](function (err) {
+        failure(err);
+      });
+    }
+  },
   created: function created() {
     this.areacontent = this.content;
   }
@@ -20226,12 +20243,14 @@ var render = function() {
             plugins: [
               "advlist autolink lists link image charmap print preview anchor",
               "searchreplace visualblocks code fullscreen",
-              "insertdatetime media table paste code help wordcount"
+              "insertdatetime media table paste code wordcount"
             ],
             toolbar:
-              "undo redo | formatselect | bold italic backcolor | \
+              "undo redo | image code | formatselect | bold italic backcolor | \
             alignleft aligncenter alignright alignjustify | \
-            bullist numlist outdent indent | removeformat | help"
+            bullist numlist outdent indent | removeformat",
+            file_picker_types: "image",
+            images_upload_handler: _vm.uploadExtraImage
           },
           "tag-name": "blog_description"
         },

@@ -9,12 +9,14 @@
                 plugins: [
                 'advlist autolink lists link image charmap print preview anchor',
                 'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table paste code help wordcount'
+                'insertdatetime media table paste code wordcount'
                 ],
                 toolbar:
-                'undo redo | formatselect | bold italic backcolor | \
+                'undo redo | image code | formatselect | bold italic backcolor | \
                 alignleft aligncenter alignright alignjustify | \
-                bullist numlist outdent indent | removeformat | help'
+                bullist numlist outdent indent | removeformat',
+                file_picker_types: 'image',
+                images_upload_handler:uploadExtraImage
             }"
             v-model="areacontent"
             tag-name="blog_description"
@@ -41,7 +43,22 @@ export default {
     components: {
         'editor' : Editor
     },
-    methods: {},
+    methods: {
+        uploadExtraImage(blobInfo, success, failure, progress){
+            console.log(blobInfo);
+            const form= new FormData();
+            form.append('file', blobInfo.blob(), blobInfo.filename());
+            axios.post('/admin/upload' ,form, {
+            headers: {
+                'content-type': `multipart/form-data; boundary=${form._boundary}`
+            }})
+            .then(res => {
+                success(res.data);
+            }).catch(err => {
+                failure(err);
+            })
+        }
+    },
     created() {
         this.areacontent = this.content
     }

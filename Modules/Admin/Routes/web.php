@@ -1,5 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
+
+// Upload Controller 
+use App\Http\Controllers\UploadController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('admin/')->group(function() {
+
     Route::get('/' , 'AdminController@redirectToLogin');
     Route::get('/dashboard', 'AdminController@index')->name('dashboard-home');  
     
@@ -40,4 +45,9 @@ Route::prefix('admin/')->group(function() {
         Route::patch('/update/{id}' , 'BlogController@update')->name('blogs-update');
         Route::delete('/delete/{id}' , 'BlogController@destroy')->name('blogs-delete');
     });
+
+
+    // Upload for client side
+    Route::post('/upload' , 'AdminController@xhrUpload')
+        ->name('image-upload');
 });

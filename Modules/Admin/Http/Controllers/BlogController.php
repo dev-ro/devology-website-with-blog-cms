@@ -107,9 +107,9 @@ class BlogController extends BaseController
         // Validation
         $validation = $request->validate($this->blogs::VALIDATION);
 
-        if($request->hasFile('blogimage')) {
-            $file = UploadController::uploadPlease($request->file('blogimage'), 'blogs');
-            $validation['blogimage'] = $file;
+        if($request->hasFile('blog_image')) {
+            $file = UploadController::uploadPlease($request->file('blog_image'), 'blogs');
+            $validation['blog_image'] = $file;
         }
 
         // Update Blog
@@ -127,8 +127,9 @@ class BlogController extends BaseController
      */
     public function destroy($id)
     {
-        $blog = $this->deleteById($this->blogs->getTable() , $id);
-        if($blog) {
+        $blog = Blog::findOrFail($id);
+        UploadController::removeImage($blog->ft_img);
+        if($blog->delete()) {
             return back()->with('success' , 'Deleted successfully.');
         }
         return back()->with('errors' , 'Something went wrong');

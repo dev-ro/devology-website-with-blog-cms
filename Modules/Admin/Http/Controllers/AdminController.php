@@ -4,7 +4,7 @@ namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\UploadController;
 class AdminController extends BaseController
 {
     /**
@@ -24,5 +24,17 @@ class AdminController extends BaseController
      */
     public function redirectToLogin() {
         return redirect()->route('dashboard-home');
+    }
+
+    /**
+     * XHR Upload
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return void
+     */
+    public function xhrUpload(Request $request) {
+        $file = UploadController::uploadPlease($request->file, 'editor');
+        return '/storage/'.$file;
     }
 }
