@@ -1,4 +1,4 @@
-@if (isset($image))
+@if (isset($image) && $image !== '')
     <img 
         src="{{'/storage/'.$image}}" 
 

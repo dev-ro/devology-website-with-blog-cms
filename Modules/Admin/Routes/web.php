@@ -30,4 +30,14 @@ Route::prefix('admin/')->group(function() {
         Route::patch('/update/{id}' , 'TestimonialsController@update')->name('testimonials-update');
         Route::delete('/delete/{id}' , 'TestimonialsController@destroy')->name('testimonials-delete');
     });
+
+    // Blogs
+    Route::prefix('blogs')->group(function(){
+        Route::get('/' , 'BlogController@index')->name('blogs-index-list');
+        Route::get('/create' , 'BlogController@create')->name('blogs-create');
+        Route::get('/edit/{id}' , 'BlogController@edit')->name('blogs-edit');
+        Route::post('/store' , 'BlogController@store')->name('blogs-store');
+        Route::patch('/update/{id}' , 'BlogController@update')->name('blogs-update');
+        Route::delete('/delete/{id}' , 'BlogController@destroy')->name('blogs-delete');
+    });
 });

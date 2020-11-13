@@ -19,5 +19,8 @@
         "psr-4": {
             "Modules\\Admin\\": ""
         }
+    },
+    "require": {
+        "laravel/ui": "^3.1"
     }
 }

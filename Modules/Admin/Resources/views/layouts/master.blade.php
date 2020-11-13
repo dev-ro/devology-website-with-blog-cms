@@ -17,7 +17,7 @@
 
     </head>
     <body class="hold-transition sidebar-mini">
-        <div class="wrapper">
+        <div id="app" class="wrapper">
           <!-- Navbar -->
          @include('admin::_.topbar')
          @include('admin::_.sidebar')

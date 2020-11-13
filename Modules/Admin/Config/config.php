@@ -2,5 +2,5 @@
 
 return [
     'name' => 'Admin',
-    'image_placeholder' => storage_path('public/default.jpg')
+    'image_placeholder' => '/storage/default.jpg'
 ];

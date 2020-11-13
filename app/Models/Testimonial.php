@@ -15,7 +15,7 @@ class Testimonial extends Model
     protected $guarded = [];
 
     // Validation
-    const Validation = [
+    public const Validation = [
         'testimonial_name'          => 'required|min:2|max:30',
         'testimonial_designation'   => 'required|min:3|max:100',
         'testimonial_image'         => 'file|image|max:1024',
