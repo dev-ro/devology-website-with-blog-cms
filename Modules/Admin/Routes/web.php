@@ -46,6 +46,15 @@ Route::prefix('admin/')->group(function() {
         Route::delete('/delete/{id}' , 'BlogController@destroy')->name('blogs-delete');
     });
 
+    // Services
+    Route::prefix('services')->group(function(){
+        Route::get('/' , 'ServicesController@index')->name('services-index-list');
+        Route::get('/create' , 'ServicesController@create')->name('services-create');
+        Route::get('/edit/{id}' , 'ServicesController@edit')->name('services-edit');
+        Route::post('/store' , 'ServicesController@store')->name('services-store');
+        Route::patch('/update/{id}' , 'ServicesController@update')->name('services-update');
+        Route::delete('/delete/{id}' , 'ServicesController@destroy')->name('services-delete');
+    });
 
     // Upload for client side
     Route::post('/upload' , 'AdminController@xhrUpload')

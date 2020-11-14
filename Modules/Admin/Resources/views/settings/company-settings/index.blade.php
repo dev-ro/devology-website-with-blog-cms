@@ -9,6 +9,6 @@
     @include('admin::settings.company-settings._form')
   </div>
 @endsection
-@section('scripts')
+@section('script')
     <script src="/js/jsoneditor.js"></script>
 @endsection

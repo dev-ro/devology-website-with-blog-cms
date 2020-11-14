@@ -59,6 +59,6 @@
         <script src="/assets/admin/dist/js/adminlte.min.js"></script>
         <script src="/js/admin.js"></script>
         @yield('scripts')
-        @stack('scripts')
+        @stack('script')
     </body>
 </html>
