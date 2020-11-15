@@ -37,7 +37,8 @@ class ServicesController extends BaseController
     {
         return view('admin::services.create' , [
             'form_action' => route('services-store'),
-            'method' => 'POST'
+            'method' => 'POST',
+            
         ]);
     }
 
@@ -49,7 +50,7 @@ class ServicesController extends BaseController
     public function store(Request $request)
     {
         $validation = $request->validate(array_merge($this->services::VALIDATION, [
-            'service_name' => 'required|min:2|unique:'.$this->services->getTable().',name,'
+            'service_name' => 'required|min:2|unique:'.$this->services->getTable().',name'
         ]));
 
         if($request->hasFile('service_image')) {
@@ -102,7 +103,7 @@ class ServicesController extends BaseController
         ]));
 
         if($request->hasFile('service_image')) {
-            $file =UploadController::uploadPlease($request->file('service_image') , $this->uploadDir);
+            $file = UploadController::uploadPlease($request->file('service_image') , $this->uploadDir);
             $validation['service_image'] = $file;
         }
 

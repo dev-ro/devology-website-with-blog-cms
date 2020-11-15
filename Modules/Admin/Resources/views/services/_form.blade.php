@@ -27,9 +27,9 @@
     <div class="form-group">
         <div class="row">
             <div class="col-md-3">
-                <label for="service_featured">Featured {{$service->featured}}</label>
+                <label for="service_featured">Featured </label>
                 <input 
-                    @if($service->featured)
+                    @if(isset($service->featured) && $service->featured)
                     checked
                     @endif
                     type="checkbox" 
@@ -40,7 +40,7 @@
             <div class="col-md-3">
                 <label for="service_footer_menu_show">Show in Footer</label>
                 <input 
-                    @if($service->show_footer_menu)
+                    @if(isset($service->show_footer_menu) && $service->show_footer_menu)
                     checked
                     @endif
                     type="checkbox" 

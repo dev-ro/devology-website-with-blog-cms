@@ -56,6 +56,16 @@ Route::prefix('admin/')->group(function() {
         });
     });
 
+    // Teams
+    Route::prefix('teams')->group(function(){
+        Route::get('/' , 'AdminTeamController@index')->name('teams-index-lists');
+        Route::get('/create' , 'AdminTeamController@create')->name('teams-create');
+        Route::get('/edit/{id}' , 'AdminTeamController@edit')->name('teams-edit');
+        Route::post('/store' , 'AdminTeamController@store')->name('teams-store');
+        Route::patch('/update/{id}' , 'AdminTeamController@update')->name('teams-update');
+        Route::delete('/delete/{id}' , 'AdminTeamController@destroy')->name('teams-delete');
+    });
+
     // Services
     Route::prefix('services')->group(function(){
         Route::get('/' , 'ServicesController@index')->name('services-index-list');
@@ -64,6 +74,11 @@ Route::prefix('admin/')->group(function() {
         Route::post('/store' , 'ServicesController@store')->name('services-store');
         Route::patch('/update/{id}' , 'ServicesController@update')->name('services-update');
         Route::delete('/delete/{id}' , 'ServicesController@destroy')->name('services-delete');
+    });
+
+    // Enquiries
+    Route::prefix('enquiries')->group(function(){
+        Route::get('/' , 'AdminEnquiryController@index')->name('enquiry-lists-admin');
     });
 
     // Upload for client side
