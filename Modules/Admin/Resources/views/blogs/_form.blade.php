@@ -10,7 +10,27 @@
         <textarea name="blog_excerpt"  id="blog_excerpt" class="form-control" cols="30" rows="5" placeholder="Blog Short Detail For Seo">@if(isset($blog->excerpt)){{$blog->excerpt}}@else{{old('blog_excerpt')}}@endif</textarea>
     </div>
     <div class="form-group">
+        <label for="blog_category">Blog Category</label>
+        <small class="text-muted d-block">Hold ctrl to select multiple category</small>
+        <select name="blog_category[]" id="blog_category" class="form-control" multiple>
+            <option value="">Select Category</option>
+            @foreach ($blogcategories as $blogcategory)
+                <option  
+                    @if(isset($blog->blogcategories))
+                        @foreach ($blog->blogcategories as $cat)
+                            @if($cat->id === $blogcategory->id)
+                                selected
+                            @endif
+                        @endforeach
+                    @endif            
+                    value="{{$blogcategory->id}}">{{$blogcategory->title}}
+                </option>
+            @endforeach
+        </select>
+    </div>
+    <div class="form-group">
         <label for="blog_description">Blog Description</label>
+        
         <wsy-editor textarea_name='blog_description' content='@if(isset($blog->description)){{$blog->description}}@else{{old('blog_description')}}@endif' />
     </div>
     <div class="form-group">
@@ -23,6 +43,6 @@
 
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-success">Edit</button>
+        <button type="submit" class="btn btn-success">@if($method==='POST') Create @else Edit @endif</button>
     </div>
 </form>

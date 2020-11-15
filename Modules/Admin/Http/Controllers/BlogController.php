@@ -7,6 +7,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Blog\Entities\Blog;
+use Modules\Blog\Entities\Blogcategories;
 class BlogController extends BaseController
 {
 
@@ -16,9 +17,14 @@ class BlogController extends BaseController
    protected string $updir = 'blogs';
    protected $blogs;
 
+   protected $blogcategories;
    public function __construct()
    {
        $this->blogs =  new Blog;
+
+       // Fetch Categories
+       $this->blogcategories = Blogcategories::all();
+
    }
 
 
@@ -30,7 +36,8 @@ class BlogController extends BaseController
     {
         $blogs = $this->blogs->paginate(10);
         return view('admin::blogs.index' , [
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            
         ]);
     }
 
@@ -43,6 +50,7 @@ class BlogController extends BaseController
         return view('admin::blogs.create',  [
             'form_action' => route('blogs-store'),
             'method' => 'POST',
+            'blogcategories' => $this->blogcategories
         ]);
     }
 
@@ -53,7 +61,6 @@ class BlogController extends BaseController
      */
     public function store(Request $request)
     {
-        dd($request->all());
         // Validation
         $validation = $request->validate($this->blogs::VALIDATION);
 
@@ -86,10 +93,12 @@ class BlogController extends BaseController
      */
     public function edit($id)
     {
+        $blog = $this->blogs::with('blogcategories')->findOrFail($id);
         return view('admin::blogs.edit' , [
             'form_action' => route('blogs-update' , $id),
             'method' => 'PATCH',
-            'blog' => $this->blogs->findOrFail($id)
+            'blog' => $blog,
+            'blogcategories' => $this->blogcategories,
         ]);
     }
 
@@ -101,6 +110,7 @@ class BlogController extends BaseController
      */
     public function update(Request $request, $id)
     {
+
         // Check If Id Exist
         $blog = $this->findOrFailById($this->blogs->getTable() , $id);
 

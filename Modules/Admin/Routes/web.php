@@ -44,6 +44,16 @@ Route::prefix('admin/')->group(function() {
         Route::post('/store' , 'BlogController@store')->name('blogs-store');
         Route::patch('/update/{id}' , 'BlogController@update')->name('blogs-update');
         Route::delete('/delete/{id}' , 'BlogController@destroy')->name('blogs-delete');
+
+        // Categories
+        Route::prefix('categories')->group(function(){
+            Route::get('/' , 'BlogcategoriesController@index')->name('blogs-categories-index-list');
+            Route::get('/create' , 'BlogcategoriesController@create')->name('blogs-categories-create');
+            Route::get('/edit/{id}' , 'BlogcategoriesController@edit')->name('blogs-categories-edit');
+            Route::post('/store' , 'BlogcategoriesController@store')->name('blogs-categories-store');
+            Route::patch('/update/{id}' , 'BlogcategoriesController@update')->name('blogs-categories-update');
+            Route::delete('/delete/{id}' , 'BlogcategoriesController@destroy')->name('blogs-categories-delete');
+        });
     });
 
     // Services

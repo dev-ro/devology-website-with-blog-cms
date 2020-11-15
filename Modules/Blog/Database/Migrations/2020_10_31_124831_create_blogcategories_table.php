@@ -20,7 +20,8 @@ class CreateBlogcategoriesTable extends Migration
             $table->text('image')->nullable();
             $table->text('slug');
             $table->timestamps();
-        });
+
+        }); 
     }
 
     /**

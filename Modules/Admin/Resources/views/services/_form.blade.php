@@ -20,11 +20,9 @@
     <div class="form-group">
         <label for="service_image">Service Image</label>
         <input type="file" name="service_image" id="service_image" class="form-control">
-
         @if(isset($service->image))
             <img  src="/storage/{{$service->image}}" class="img-fluid mt-2" width="100px" alt="">
         @endif
-
     </div>
     <div class="form-group">
         <div class="row">

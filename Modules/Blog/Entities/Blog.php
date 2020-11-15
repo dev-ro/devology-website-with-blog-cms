@@ -20,6 +20,7 @@ class Blog extends Model
         'blog_excerpt'   => 'max:200',
         'blog_image'     => 'file|image|max:1024',
         'blog_description'     => 'required',
+        'blog_category.*' => 'required|exists:blogcategories,id'
     ];
 
 
@@ -75,6 +76,8 @@ class Blog extends Model
         $blog->ft_img       = isset($attributes['blog_image']) ? $attributes['blog_image'] : '';
         $blog->slug         = $attributes['blog_title'];
 
+        $blog->blogcategories()->sync($attributes['blog_category']);
+
         return $blog->save();
     }
 
@@ -93,7 +96,7 @@ class Blog extends Model
             'ft_img' => isset($attributes['blog_image']) ? $attributes['blog_image'] : '',
             'slug' => $attributes['blog_title']
         ]);
-
+        $save->blogcategories()->attach($attributes['blog_category']);
         return $save;
     }
 }

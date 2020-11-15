@@ -14,10 +14,13 @@ class CreateBlogcategoriesBlogsTable extends Migration
     public function up()
     {
         Schema::create('blogcategories_blogs', function (Blueprint $table) {
-            $table->id();
+
             $table->unsignedBigInteger('blog_id');
+            $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade');
+
             $table->unsignedBigInteger('blogcategories_id');
-            $table->timestamps();
+            $table->foreign('blogcategories_id')->references('id')->on('blogcategories')->onDelete('cascade');
+            
         });
     }
 
