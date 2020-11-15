@@ -3,7 +3,18 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Edit Testimonial</h3>
+      <div class="row">
+        <div class="col-md-5">
+          <h3 class="card-title">Edit Testimonial</h3>
+         
+        </div>
+        <div class="col-md-7 text-right">
+          <div class="btn-group-sm">
+            <a href="{{route('testimonials-index')}}" class="btn btn-primary">Testimonials</a>
+            <a href="{{route('testimonials-create')}}" class="btn btn-primary">Create</a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
