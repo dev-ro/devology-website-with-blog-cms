@@ -37,7 +37,7 @@ class BlogcategoriesController extends BaseController
     public function index()
     {
         return view('admin::blogs.categories.index' , [
-            'blogcategories' => $this->blogcategories->paginate(10)
+            'blogcategories' => $this->blogcategories::withCount('blogs')->paginate(10)
         ]);
     }
 

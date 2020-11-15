@@ -21,6 +21,7 @@
                     <th>#</th>
                     <th>Title</th>
                     <th>Image</th>
+                    <th>Blog count</th>
                     <th>Created at</th>
                     <th>Updated at</th>
                     <th>Actions</th>
@@ -36,6 +37,9 @@
                         'alt' => $blogcategory->title ])
                         </td>
                         <td>{{$blogcategory->title}}</td>
+                        <td>
+                            {{$blogcategory->blogs_count}}
+                        </td>
                         <td>{{$blogcategory->created_at->diffForHumans()}}</td>
                         <td>{{$blogcategory->updated_at->diffForHumans()}}</td>
                         <td>
