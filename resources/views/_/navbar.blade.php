@@ -5,7 +5,7 @@
             <!-- Navbar Brand-->
             <a class="navbar-brand" href="/">
                @if ( $company_settings->company_logo !== '' )
-                   <img src="/storage/{{$company_settings->company_logo}}" alt="{{$company_settings->company_name}}" class="img-fluid">
+                   <img src="{{$company_settings->company_logo_header}}" width="80px" alt="{{$company_settings->company_name}}" class="img-fluid">
                @else
                    <h3>{{$company_settings->company_name}}</h3>
                @endif

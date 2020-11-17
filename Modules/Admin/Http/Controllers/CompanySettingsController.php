@@ -39,16 +39,24 @@ class CompanySettingsController extends BaseController
 
         // dd(json_decode($attributes['company_social']));
 
-        // Check if company logo file exit
-        if( $request->has('company_logo') ) {
-            $logo = UploadController::uploadPlease($request->file('company_logo') , $this->updir);
+        // Check if company logo file for header exist
+        if( $request->hasFile('company_logo_header') ) {
+            $logo = UploadController::uploadPlease($request->file('company_logo_header') , $this->updir);
             $attributes = array_merge($attributes , [
-                'company_logo' => $logo
+                'company_logo_header' => $logo
+                ]);
+        }
+        
+        // Check if company logo file for footer exist
+        if( $request->hasFile('company_logo_footer') ) {
+            $logo = UploadController::uploadPlease($request->file('company_logo_footer') , $this->updir);
+            $attributes = array_merge($attributes , [
+                'company_logo_footer' => $logo
             ]);
         }
 
         // Check if company favicon file exit
-        if( $request->has('company_favicon') ) {
+        if( $request->hasFile('company_favicon') ) {
             $favicon = UploadController::uploadPlease($request->file('company_favicon') , $this->updir);
             $attributes = array_merge($attributes , [
                 'company_favicon' => $favicon

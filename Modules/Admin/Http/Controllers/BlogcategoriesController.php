@@ -109,10 +109,9 @@ class BlogcategoriesController extends BaseController
      */
     public function update(Request $request, $id)
     {
-
         
         $validation = $request->validate([
-            'blogcategory_title' => 'required|min:2|unique:'.$this->blogcategories->getTable().',title,except,'.$id    
+            'blogcategory_title' => 'required|min:2|unique:'.$this->blogcategories->getTable().',title,'.$id    
         ]);
 
         if($request->hasFile('blogcategory_image')) {

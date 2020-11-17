@@ -10,32 +10,33 @@ class EnquiryController extends Controller
 {
     public function enquire( Request $request ) {
 
-
         // Refactor ASAP 
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'message' => 'required'
+            'message' => 'required',
+            'phone' => 'required'
         ]); 
 
         // Send Mail
-        $send = Mail::to('info@gmail.com')->send(new EnquireFormSend($validated['name'], $validated['email'], $validated['message']));
+        $send = Mail::to('info@gmail.com')->send(new EnquireFormSend($validated['name'], $validated['email'], $validated['message'], $validated['phone']));
 
         Enquiry::create([
             'name'      => $validated['name'],
             'email'     => $validated['email'],
             'message'   => $validated['message'],
+            'phone'   =>    $request->phone,
             'url'       => url()->previous(),
-            'type'      => url()->previous()
+            'type'      => $request->category
         ]);
 
         if($request->wantsJson()) {
             return response()->json([
-                'message' => 'Something went wrong',
+                'success' , 'We will be in touch as soon as possible'
             ], 200);
-        } else {
-            return back()->with('success' , 'We will be in touch as soon as possible');
-        }
-
+        } 
+        return response()->json([
+            'message' => 'Something went wrong',
+        ], 200);
     }
 }

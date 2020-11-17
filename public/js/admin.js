@@ -99,11 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./Resources/assets/js/bootstrap.js"); // Vue js
 
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // Functions file
-
-__webpack_require__(/*! ./functions */ "./Resources/assets/js/functions.js"); // Vue.component('editor-wy' , require('./components/wysywig.vue'));
-
-
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 var app = new Vue({
   el: "#app",
@@ -111,7 +107,7 @@ var app = new Vue({
     'wsy-editor': _components_wysywig_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   created: function created() {
-    console.log(';created');
+    console.log('created');
   }
 });
 
@@ -196,27 +192,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_wysywig_vue_vue_type_template_id_bb256834___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./Resources/assets/js/functions.js":
-/*!******************************************!*\
-  !*** ./Resources/assets/js/functions.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// delete form submission
-function d(e) {
-  e.preventDefault();
-  var check = confirm('are you sure?');
-
-  if (check) {
-    return true;
-  }
-
-  return false;
-}
 
 /***/ }),
 

@@ -4,7 +4,7 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-4">
-        <p class="text-muted">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat ad tenetur accusantium magni. Fuga quos, assumenda provident rem qui quae harum magni ducimus, soluta quia ullam praesentium ipsum earum.</p>
+        <p class="text-muted">Your Company Details. Such as LOGO for header, LOGO for footer, Tagline etc.</p>
       </div>
       <div class="col-md-8">
       @include('ui::admin.flash-msg')
@@ -18,15 +18,23 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="company_tagline">Company Tagline</label>
-            <input name="company_tagline" type="email" class="form-control" id="company_tagline" placeholder="Company Tagline" value="{{$company_settings->company_tagline}}">
+            <input name="company_tagline" type="email" class="form-control" id="company_tagline" placeholder="Company Tagline" value="{{$company_settings->tagline}}">
           </div>
         </div>
       </div>
        <div class="row">
          <div class="col-md-6">
           <div class="form-group">
-            <label for="company_logo">Company Logo</label>
-            <input type="file" name="company_logo" class="form-control-file form-control" id="company_logo">
+            <label for="company_logo_header">Company Logo</label>
+            <small class="text-muted">For Header</small>
+            <input type="file" name="company_logo_header" class="form-control-file form-control" id="company_logo_header">
+            <img src="{{$company_settings->company_logo_header}}" width="130px" class="img-fluid" alt="{{$company_settings->company_name}}">
+          </div>
+          <div class="form-group">
+            <label for="company_logo_footer">Company Logo</label>
+            <small class="text-muted">For Footer</small>
+            <input type="file" name="company_logo_footer" class="form-control-file form-control" id="company_logo_footer">
+            <img src="{{$company_settings->company_logo_footer}}" width="130px" class="img-fluid" alt="{{$company_settings->company_name}}">
           </div>
          </div>
          <div class="col-md-6">
@@ -35,6 +43,7 @@
             <input type="file" 
             name="company_favicon" class="form-control-file form-control" id="company_favicon" >
             <small class="text-muted">Size should be 60 x 60</small>
+            <img src="{{$company_settings->company_favicon}}" class="img-fluid"  alt="">
           </div>
          </div>
        </div>
@@ -70,3 +79,8 @@
     </div>
   </div>
 </form>
+
+
+@section('scripts')
+<script src="/js/jsoneditor.js"></script>
+@endsection

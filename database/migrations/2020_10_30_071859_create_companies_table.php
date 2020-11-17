@@ -17,7 +17,8 @@ class CreateCompaniesTable extends Migration
             $table->id();
             $table->string('company_name')->nullable();
             $table->string('tagline')->nullable();
-            $table->text('company_logo')->nullable();
+            $table->text('company_logo_header')->nullable();
+            $table->text('company_logo_footer')->nullable();
             $table->text('company_favicon')->nullable();
             $table->text('company_description')->nullable();
             $table->text('company_address')->nullable();

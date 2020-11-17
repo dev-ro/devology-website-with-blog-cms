@@ -34,7 +34,9 @@ class CompanySeeder extends Seeder
 
         Company::create([
             'company_name' => 'Dev',
-            'company_logo' => '',
+            'company_logo_header' => '',
+            'company_logo_footer' => '',
+            'company_favicon' => '',
             'tagline' => 'Devology',
             'copyright' => '&copy; Copyrights '. date('Y') .' Dev All rights reserved.',
             'company_description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iusto accusamus dolorum vero exercitationem excepturi, similique et aspernatur saepe ipsa modi quisquam odio eius iure labore quas rem quidem maxime.',

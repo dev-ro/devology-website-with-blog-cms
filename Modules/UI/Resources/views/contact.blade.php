@@ -54,6 +54,17 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control shadow-xs" name="phone" placeholder="Phone" required="required">
                                 </div>
+                                <div class="form-group">
+                                    <select name="category" id="category" class="form-control">
+                                        <option value="">Select Category</option>
+                                        <option value="website">Website</option>
+                                        <option value="design">Design</option>
+                                        <option value="seo">SEO</option>
+                                        <option value="app">App</option>
+                                        <option value="ecommerce">SEO</option>
+                                        <option value="digital marketing">Digital Marketing</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
@@ -65,7 +76,7 @@
                             </div>
                         </div>
                     </form>
-                    <p class="form-message"></p>
+                    <p class="form-message mt-3"></p>
                 </div>
             </div>
         </div>

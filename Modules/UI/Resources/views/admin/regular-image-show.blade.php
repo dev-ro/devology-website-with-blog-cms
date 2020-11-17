@@ -1,6 +1,6 @@
 @if (isset($image) && $image !== '')
     <img 
-        src="{{'/storage/'.$image}}" 
+        src="{{$image}}" 
 
         alt="{{isset($alt) ? $alt : $company_settings->company_name}}" 
 

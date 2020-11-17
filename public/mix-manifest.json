@@ -1,5 +1,6 @@
 {
     "/js/admin.js": "/js/admin.js",
     "/css/admin.css": "/css/admin.css",
-    "/js/jsoneditor.js": "/js/jsoneditor.js"
+    "/js/jsoneditor.js": "/js/jsoneditor.js",
+    "/js/custom.js": "/js/custom.js"
 }

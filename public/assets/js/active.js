@@ -228,14 +228,19 @@
     // :: 15.0 CONTACT FORM ACTIVE CODE
     // Get the form.
     var form = $("#contact-form");
+
     // Get the messages div.
     var formMessages = $(".form-message");
+
     // Set up an event listener for the contact form.
+
     $(form).submit(function (e) {
         // Stop the browser from submitting the form.
         e.preventDefault();
         // Serialize the form data.
-        var formData = $(form).serialize();
+        var formData = new FormData(form[0]);
+
+        console.log(formData);
 
         // console.log(formData)
         // Submit the form using AJAX.
@@ -243,10 +248,11 @@
             type: "POST",
             url: $(form).attr("action"),
             data: formData,
+            processData: false,
+            contentType: false,
             dataType: "json",
             headers: {
                 'Accept': 'application/json',
-                'Content-Type' : 'application/json',
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         })

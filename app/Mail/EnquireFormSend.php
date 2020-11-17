@@ -20,17 +20,19 @@ class EnquireFormSend extends Mailable
     public $name;
     public $email;
     public $message;
+    public $phone;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name, $email, $message)
+    public function __construct($name, $email, $message, $phone)
     {
         $this->name = $name;
         $this->email = $email;
         $this->message = $message;
+        $this->phone = $phone;
     }
 
     /**
@@ -44,6 +46,7 @@ class EnquireFormSend extends Mailable
             'sender_name'       =>  $this->name,
             'sender_email'      =>  $this->email,
             'sender_message'    =>  $this->message,
+            'sender_phone'    =>  $this->phone,
         ]);
     }
 }

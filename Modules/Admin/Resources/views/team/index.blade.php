@@ -3,13 +3,13 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-      <div class="row">
-          <div class="col-md-7">
+      <div class="row position-relative">
+        <div class="col-md-7">
             <h3 class="card-title">Teams</h3>
-          </div>
-          <div class="col-md-5 text-right">
-              <a class="btn btn-primary btn-sm" href="{{route('teams-create')}}">Add Team</a>
-          </div>
+        </div>
+        <div class="col-md-5 text-right">
+            <a class="btn btn-primary btn-sm" href="{{route('teams-create')}}">Add Team</a>
+        </div>
       </div>
     </div>
     <!-- /.card-header -->
@@ -17,6 +17,7 @@
         <table class="table table-bordered table-info table-hover">
             <thead class="">
                 <tr>
+                    
                     <th>#</th>
                     <th>Name</th>
                     <th>Designation</th>
@@ -33,9 +34,7 @@
                         <td>{{$team->team_name}}</td>
                         <td>{{$team->designation}}</td>
                         <td>
-                        @include('ui::admin.regular-image-show', [
-                        'image' => $team->image, 
-                        'alt' => $team->team_name ])
+                            @include('ui::admin.regular-image-show', ['image' => $team->image, 'alt' => $team->team_name ])
                         </td>
                         <td>{{$team->created_at->diffForHumans()}}</td>
                         <td>{{$team->updated_at->diffForHumans()}}</td>
@@ -53,5 +52,5 @@
     <div class="card-footer">
         {{ $teams->links('vendor.pagination.bootstrap-4')}}
     </div>
-  </div>
+</div>
 @endsection

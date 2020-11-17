@@ -76,9 +76,22 @@ Route::prefix('admin/')->group(function() {
         Route::delete('/delete/{id}' , 'ServicesController@destroy')->name('services-delete');
     });
 
+    // Portfolio
+    Route::prefix('portfolios')->group(function(){
+        Route::get('/', 'PortfolioController@index')->name('portfolio-index-list');
+        Route::get('/create' , 'PortfolioController@create')->name('portfolio-create');
+        Route::get('/edit/{id}' , 'PortfolioController@edit')->name('portfolio-edit');
+        Route::post('/store' , 'PortfolioController@store')->name('portfolio-store');
+        Route::patch('/update/{id}' , 'PortfolioController@update')->name('portfolio-update');
+        Route::delete('/delete/{id}' , 'PortfolioController@destroy')->name('portfolio-delete');
+    });
+
     // Enquiries
     Route::prefix('enquiries')->group(function(){
         Route::get('/' , 'AdminEnquiryController@index')->name('enquiry-lists-admin');
+        Route::get('/respond/{id}/enquiry', 'AdminEnquiryController@show')->name('respond-enquiry-view');
+
+        Route::post('/respond/{id}/enquiry', 'AdminEnquiryController@respond')->name('respond-enquiry-post');
     });
 
     // Upload for client side

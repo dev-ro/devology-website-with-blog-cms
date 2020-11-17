@@ -24,7 +24,7 @@
         <label for="testimonial_image">Image</label>
         <input type="file" name="testimonial_image" id="testimonial_image" class="testimonial_image form-control">
         @if(isset($testimonial->image))
-            <img  src="/storage/{{$testimonial->image}}" class="img-fluid mt-2" width="100px" alt="">
+            <img  src="{{$testimonial->image}}" class="img-fluid mt-2" width="100px" alt="">
         @endif
     </div>
 

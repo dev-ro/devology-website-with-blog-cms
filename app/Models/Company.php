@@ -16,7 +16,8 @@ class Company extends Model
 
     public const VALIDATION = [
         'company_name'      => 'required|string|max:80',
-        'company_logo'      => 'file|image|max:1024',
+        'company_logo_header'   => 'file|image|max:1024',
+        'company_logo_footer'   => 'file|image|max:1024',
         'company_favicon'   => 'file|image|max:300',
         'company_social'    => 'json'
     ];
@@ -40,7 +41,8 @@ class Company extends Model
         $company_settings->tagline              = $attributes['company_tagline'];
 
         // Logo and Favicon
-        $company_settings->company_logo         = $attributes['company_logo'] ?? $company_settings->company_logo;
+        $company_settings->company_logo_header  = $attributes['company_logo_header'] ?? $company_settings->company_logo_header;
+        $company_settings->company_logo_footer  = $attributes['company_logo_footer'] ?? $company_settings->company_logo_footer;
         $company_settings->company_favicon      = $attributes['company_favicon'] ?? $company_settings->company_favicon;
         
         $company_settings->company_social       = json_decode($attributes['company_social']) ?? $attributes['company_social'];

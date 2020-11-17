@@ -23,7 +23,7 @@ class UploadController extends Controller
      */
     public static function uploadPlease(string $file, string $dir='', array $attr=[] ){
         $file = Storage::disk('public')->putFile(self::$dir.$dir, $file);
-        return $file;
+        return '/storage/'.$file;
     }
 
 

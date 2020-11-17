@@ -38,7 +38,7 @@
         <input type="file" name="blog_image" id="blog_image" class="form-control">
 
         @if(isset($blog->ft_img))
-            <img  src="/storage/{{$blog->ft_img}}" class="img-fluid mt-2" width="100px" alt="">
+            <img  src="{{$blog->ft_img}}" class="img-fluid mt-2" width="100px" alt="">
         @endif
 
     </div>

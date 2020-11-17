@@ -13,7 +13,7 @@
         <label for="blogcategory_image">Blog Category Image</label>
         <input type="file" name="blogcategory_image" id="blogcategory_image" class="form-control">
         @if(isset($blogcategory->image))
-            <img  src="/storage/{{$blogcategory->image}}" class="img-fluid mt-2" width="100px" alt="">
+            <img  src="{{$blogcategory->image}}" class="img-fluid mt-2" width="100px" alt="">
         @endif
     </div>
     <div class="form-group">

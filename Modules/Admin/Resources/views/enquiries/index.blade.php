@@ -14,6 +14,7 @@
     <!-- /.card-header -->
     <div class="card-body">
         @include('ui::admin.flash-msg')
+       
         <table class="table table-bordered table-info table-hover">
             <thead class="">
                 <tr>
@@ -37,8 +38,7 @@
                         <td>{{$enquiry->type}}</td>
                         <td>{{$enquiry->created_at->diffForHumans()}}</td>
                         <td>{{$enquiry->updated_at->diffForHumans()}}</td>
-                        <td>
-                        </td>
+                        <td><a href="{{route('respond-enquiry-view', $enquiry->id)}}" class="btn btn-primary">Respond Enquiry</a></td>
                     </tr>
                 @endforeach
             </tbody>
