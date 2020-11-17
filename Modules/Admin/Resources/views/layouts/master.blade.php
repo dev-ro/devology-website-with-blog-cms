@@ -11,12 +11,9 @@
     <link rel="stylesheet" href="/assets/admin/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="/assets/admin/dist/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    @yield('styles')
+    @yield('admin_plugins_files')
 
-    <script src="/assets/admin/plugins/jquery/jquery.min.js"></script>
-    <script src="/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/admin/dist/js/adminlte.min.js"></script>
-
-    
   </head>
   <body class="hold-transition sidebar-mini">
     <div id="app" class="wrapper">
@@ -38,7 +35,11 @@
       </aside>
       @include('admin::_.footer')
     </div>
-    <script src="/js/custom.js"> </script>  
+    <script src="/assets/admin/plugins/jquery/jquery.min.js"></script>
+    <script src="/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/admin/dist/js/adminlte.min.js"></script>
+    <script src="/assets/js/plugins.min.js"> </script>
+    <script src="/assets/js/custom.js"> </script>
     <script src="/js/admin.js"></script>
     @yield('scripts')
     @stack('script')

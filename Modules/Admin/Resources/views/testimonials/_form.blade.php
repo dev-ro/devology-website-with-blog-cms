@@ -9,16 +9,17 @@
             name="testimonial_name" 
             id="name" 
             class="form-control" 
+            placeholder="Testimonial Name"
             value="@if(isset($testimonial->name)){{$testimonial->name}}@else{{old('tesimonial_name')}}@endif"
         >
     </div>
     <div class="form-group">
         <label for="testimonial_designation">Designation / Company</label>
-        <input type="text" name="testimonial_designation" id="testimonial_designation" class="form-control" value="@if(isset($testimonial->company)){{$testimonial->company}}@else{{old('testimonial_designation')}}@endif">
+        <input type="text" placeholder="Designation / Company" name="testimonial_designation" id="testimonial_designation" class="form-control" value="@if(isset($testimonial->company)){{$testimonial->company}}@else{{old('testimonial_designation')}}@endif">
     </div>
     <div class="form-group">
         <label for="testimonial_desc">Description</label>
-        <textarea name="testimonial_desc"  cols="30" rows="5" id="testimonial_desc" class="form-control">@if(isset($testimonial->description)){{$testimonial->description}}@else{{old('testimonial_desc')}}@endif</textarea>
+        <textarea name="testimonial_desc" placeholder="Description" cols="30" rows="5" id="testimonial_desc" class="form-control">@if(isset($testimonial->description)){{$testimonial->description}}@else{{old('testimonial_desc')}}@endif</textarea>
     </div>
     <div class="form-group">
         <label for="testimonial_image">Image</label>

@@ -6,9 +6,9 @@
 
         class="img-fluid {{ isset($class) ? $class : ''}}" 
 
-        width="{{ isset($width) ? $width : '120px' }}" 
+        width="{{ isset($width) ? $width : '50px' }}" 
 
-        height="{{isset($width) ? $width : '120px'}}" 
+        height="{{isset($width) ? $width : '50px'}}" 
 
         style="{{isset($styles) ? $styles : ''}}"
     >

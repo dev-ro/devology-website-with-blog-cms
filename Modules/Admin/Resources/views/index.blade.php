@@ -2,60 +2,43 @@
 @section('title') Dashboard @endsection
 @section('content')
 <div class="row">
-    <div class="col-lg-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-          </p>
-
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-      <div class="card card-primary card-outline">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-          </p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div><!-- /.card -->
-    </div>
-    <!-- /.col-md-6 -->
-    <div class="col-lg-6">
-      <div class="card">
-        <div class="card-header">
-          <h5 class="m-0">Featured</h5>
-        </div>
-        <div class="card-body">
-          <h6 class="card-title">Special title treatment</h6>
-
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-
-      <div class="card card-primary card-outline">
-        <div class="card-header">
-          <h5 class="m-0">Featured</h5>
-        </div>
-        <div class="card-body">
-          <h6 class="card-title">Special title treatment</h6>
-
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+  <div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text"><a class="text-muted text-bold" href="{{route('enquiry-lists-admin')}}">Enquiries</a></span>
+        <span class="info-box-number">{{$enquiriesCount}}</span>
       </div>
     </div>
-    <!-- /.col-md-6 -->
   </div>
+  <div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-success"><i class="far fa-copy"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">
+          <a class="text-muted text-bold" href="{{route('blogs-index-list')}}">Blogs</a>
+        </span>
+        <span class="info-box-number">{{$blogsCount}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-warning"><i class="fas fa-marker"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text"><a class="text-muted text-bold" href="{{route('testimonials-index')}}">Testimonials</a></span>
+        <span class="info-box-number">{{$testimonialsCount}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-danger"><i class="fas fa-id-card"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text"><a class="text-muted text-bold" href="{{route('portfolio-index-list')}}">Portfolios</a></span>
+      <span class="info-box-number">{{$portfolioCount}}</span>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection

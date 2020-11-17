@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
         <label for="service_description">Service Description</label>
-        <wsy-editor textarea_name='service_description' content='@if(isset($service->description)){{$service->description}}@else{{old('service_description')}}@endif' />
+        <textarea class="service_description" name="service_description" placeholder="Blog Description" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">@if(isset($service->description)){{$service->description}}@else{{old('service_description')}}@endif</textarea>
     </div>
     <div class="form-group">
         <label for="service_image">Service Image</label>
@@ -57,3 +57,13 @@
         </button>
     </div>
 </form>
+
+@section('styles')
+    <link rel="stylesheet" href="/assets/admin/plugins/summernote/summernote-bs4.css">
+@endsection
+@section('scripts')
+<script src="/assets/admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <script>
+        $('.service_description').summernote();
+    </script>
+@endsection

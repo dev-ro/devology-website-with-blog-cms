@@ -27,6 +27,7 @@ class TestimonialsController extends BaseController
      */
     public function index()
     {
+        // dd(Testimonial::orderBy('id' , 'DESC')->paginate(10));
         return view('admin::testimonials.index' , [
             'testimonials' => Testimonial::orderBy('id' , 'DESC')->paginate(10)
         ]);

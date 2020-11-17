@@ -5,6 +5,11 @@ namespace Modules\Admin\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UploadController;
+use App\Models\Enquiry;
+use App\Models\Testimonial;
+use Modules\Blog\Entities\Blog;
+use Modules\Portfolio\Entities\Portfolio;
+
 class AdminController extends BaseController
 {
     /**
@@ -12,10 +17,21 @@ class AdminController extends BaseController
      * @return Renderable
      */
     public function index()
-    {
-        return view('admin::index');
-    }
+    {   
+        $enquiriesCount = Enquiry::count();
+        $blogsCount = Blog::count();
+        $testimonialsCount = Testimonial::count();
+        $portfolioCount = Portfolio::count();
 
+        return view('admin::index' , [
+            'enquiriesCount' => $enquiriesCount,
+            'blogsCount' => $blogsCount,
+            'testimonialsCount' => $testimonialsCount,
+            'portfolioCount' => $portfolioCount,
+        ]);
+    
+    
+    }
 
     /**
      * Redirect To login if not logged in 

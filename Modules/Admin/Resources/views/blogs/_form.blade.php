@@ -30,19 +30,28 @@
     </div>
     <div class="form-group">
         <label for="blog_description">Blog Description</label>
-        
-        <wsy-editor textarea_name='blog_description' content='@if(isset($blog->description)){{$blog->description}}@else{{old('blog_description')}}@endif' />
+        <textarea class="blog_description" name="blog_description" placeholder="Blog Description"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">@if(isset($blog->description)){{$blog->description}}@else{{old('blog_description')}}@endif</textarea> 
     </div>
     <div class="form-group">
         <label for="blog_image">Blog Image</label>
         <input type="file" name="blog_image" id="blog_image" class="form-control">
-
         @if(isset($blog->ft_img))
             <img  src="{{$blog->ft_img}}" class="img-fluid mt-2" width="100px" alt="">
         @endif
-
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-success">@if($method==='POST') Create @else Edit @endif</button>
     </div>
 </form>
+
+@section('styles')
+    <link rel="stylesheet" href="/assets/admin/plugins/summernote/summernote-bs4.css">
+@endsection
+
+@section('scripts')
+<script src="/assets/admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <script>
+        $('.blog_description').summernote();
+    </script>
+@endsection
