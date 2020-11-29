@@ -25,9 +25,7 @@ class AdminTeamController extends Controller
      */
     public function index()
     {
-        return view('admin::team.index' , [
-            'teams' => $this->teams::orderBy('id' , 'DESC')->paginate(10)
-        ]);
+        return view('admin::team.index');
     }
 
     /**
@@ -126,5 +124,28 @@ class AdminTeamController extends Controller
             return back()->with('success' , 'Deleted successfully.');
         }
         return back()->with('errors' , 'Something went wrong');
+    }
+
+    /**
+     * To mass delete the customer
+     *
+     * @param Request $request
+     */
+    public function massDestroy(Request $request) {
+        foreach($request->indexes as  $id) {
+            $testimonial = Team::findOrFail($id);
+            $testimonial->delete();
+        }
+
+        session()->flash('success' , 'Deleted successfully');
+
+        if($request->wantsJson()) {
+            return response()->json(['message' => 'Deleted successfully'], 200);
+           
+        } else {
+            return back()->with('success' , 'Deleted successfully.');
+        }
+
+
     }
 }

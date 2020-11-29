@@ -118,6 +118,23 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-envelope-open"></i>
+            <p>
+              Enquiries
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{route('enquiry-lists-admin')}}" class="nav-link ">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Enquiries Lists</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
             <i class="nav-icon fas fa-cog"></i>
             <p>
               Settings
@@ -135,23 +152,6 @@
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Website Settings</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-envelope-open"></i>
-            <p>
-              Enquiries
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{route('enquiry-lists-admin')}}" class="nav-link ">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Enquiries Lists</p>
               </a>
             </li>
           </ul>

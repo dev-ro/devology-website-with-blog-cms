@@ -1,7 +1,9 @@
 @extends('admin::layouts.master')
 @section('title') Blog Categories @endsection
 @section('content')
-<div class="card">
+@inject('blogs', 'Modules\Admin\DataGrids\BlogCategoriesDataGrid')
+{{$blogs->render()}}
+{{-- <div class="card">
     <div class="card-header">
       <div class="row">
           <div class="col-md-7">
@@ -54,5 +56,5 @@
     <div class="card-footer">
         {{ $blogcategories->links('vendor.pagination.bootstrap-4')}}
     </div>
-  </div>
+</div> --}}
 @endsection

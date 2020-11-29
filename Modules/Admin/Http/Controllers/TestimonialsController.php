@@ -27,10 +27,7 @@ class TestimonialsController extends BaseController
      */
     public function index()
     {
-        // dd(Testimonial::orderBy('id' , 'DESC')->paginate(10));
-        return view('admin::testimonials.index' , [
-            'testimonials' => Testimonial::orderBy('id' , 'DESC')->paginate(10)
-        ]);
+        return view('admin::testimonials.index');
         
     }
 
@@ -118,4 +115,29 @@ class TestimonialsController extends BaseController
         }
         return back()->with('errors' , 'Something went wrong');
     }
+
+
+     /**
+     * To mass delete the customer
+     *
+     * @param Request $request
+     */
+    public function massDestroy(Request $request) {
+        foreach($request->indexes as  $testimonialId) {
+            $testimonial = Testimonial::findOrFail($testimonialId);
+            $testimonial->delete();
+        }
+
+        session()->flash('success' , 'Deleted successfully');
+
+        if($request->wantsJson()) {
+            return response()->json(['message' => 'Deleted successfully'], 200);
+           
+        } else {
+            return back()->with('success' , 'Deleted successfully.');
+        }
+
+
+    }
+
 }

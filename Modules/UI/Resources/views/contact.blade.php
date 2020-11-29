@@ -1,5 +1,4 @@
- <!--====== Contact Area Start ======-->
- <section id="contact" class="contact-area ptb_100">
+<section id="contact" class="contact-area ptb_100">
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-12 col-lg-5">
@@ -43,19 +42,19 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control shadow-xs" name="name" placeholder="Name" required="required">
+                                    <input type="text" class="form-control shadow-xs c-f__name" name="name" placeholder="Name" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control shadow-xs" name="company_name" placeholder="Company Name" required="required">
+                                    <input type="text" class="form-control shadow-xs c-f__company-name" name="company_name" placeholder="Company Name" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control shadow-xs" name="email" placeholder="Email" required="required">
+                                    <input type="email" class="form-control shadow-xs c-f__email" name="email" placeholder="Email" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control shadow-xs" name="phone" placeholder="Phone" required="required">
+                                    <input type="text" class="form-control shadow-xs c-f__phone" name="phone" placeholder="Phone" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <select name="category" id="category" class="form-control">
+                                    <select name="category" id="category" class="form-control c-f__cat">
                                         <option value="">Select Category</option>
                                         <option value="website">Website</option>
                                         <option value="design">Design</option>
@@ -68,7 +67,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <textarea class="form-control shadow-xs" name="message" placeholder="Message" required="required"></textarea>
+                                    <textarea class="form-control shadow-xs c-f__msg" name="message" placeholder="Message" required="required"></textarea>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -82,4 +81,3 @@
         </div>
     </div>
 </section>
-<!--====== Contact Area End ======-->

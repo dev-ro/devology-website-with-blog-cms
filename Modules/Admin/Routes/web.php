@@ -1,20 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-// Upload Controller 
-use App\Http\Controllers\UploadController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::prefix('admin/')->group(function() {
 
     Route::get('/' , 'AdminController@redirectToLogin');
@@ -34,6 +20,7 @@ Route::prefix('admin/')->group(function() {
         Route::get('/edit/{id}' , 'TestimonialsController@edit')->name('testimonials-edit');
         Route::patch('/update/{id}' , 'TestimonialsController@update')->name('testimonials-update');
         Route::delete('/delete/{id}' , 'TestimonialsController@destroy')->name('testimonials-delete');
+        Route::post('/massDestroy' , 'TestimonialsController@massDestroy')->name('testimonial-mass-destroy');
     });
 
     // Blogs
@@ -44,6 +31,7 @@ Route::prefix('admin/')->group(function() {
         Route::post('/store' , 'BlogController@store')->name('blogs-store');
         Route::patch('/update/{id}' , 'BlogController@update')->name('blogs-update');
         Route::delete('/delete/{id}' , 'BlogController@destroy')->name('blogs-delete');
+        Route::post('/massDestroy' , 'BlogController@massDestroy')->name('blogs-mass-destroy');
 
         // Categories
         Route::prefix('categories')->group(function(){
@@ -53,6 +41,7 @@ Route::prefix('admin/')->group(function() {
             Route::post('/store' , 'BlogcategoriesController@store')->name('blogs-categories-store');
             Route::patch('/update/{id}' , 'BlogcategoriesController@update')->name('blogs-categories-update');
             Route::delete('/delete/{id}' , 'BlogcategoriesController@destroy')->name('blogs-categories-delete');
+            Route::post('/massDestroy' , 'BlogcategoriesController@massDestroy')->name('blogs-categories-mass-destroy');
         });
     });
 
@@ -64,6 +53,7 @@ Route::prefix('admin/')->group(function() {
         Route::post('/store' , 'AdminTeamController@store')->name('teams-store');
         Route::patch('/update/{id}' , 'AdminTeamController@update')->name('teams-update');
         Route::delete('/delete/{id}' , 'AdminTeamController@destroy')->name('teams-delete');
+        Route::post('/massDestroy' , 'AdminTeamController@massDestroy')->name('teams-mass-destroy');
     });
 
     // Services
@@ -74,6 +64,7 @@ Route::prefix('admin/')->group(function() {
         Route::post('/store' , 'ServicesController@store')->name('services-store');
         Route::patch('/update/{id}' , 'ServicesController@update')->name('services-update');
         Route::delete('/delete/{id}' , 'ServicesController@destroy')->name('services-delete');
+        Route::post('/massDestroy' , 'ServicesController@massDestroy')->name('services-mass-destroy');
     });
 
     // Portfolio
@@ -84,6 +75,7 @@ Route::prefix('admin/')->group(function() {
         Route::post('/store' , 'PortfolioController@store')->name('portfolio-store');
         Route::patch('/update/{id}' , 'PortfolioController@update')->name('portfolio-update');
         Route::delete('/delete/{id}' , 'PortfolioController@destroy')->name('portfolio-delete');
+        Route::post('/massDestroy' , 'PortfolioController@massDestroy')->name('portfolios-mass-destroy');
     });
 
     // Enquiries

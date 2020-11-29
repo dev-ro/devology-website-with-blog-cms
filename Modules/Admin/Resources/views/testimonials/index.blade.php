@@ -1,5 +1,6 @@
 @extends('admin::layouts.master')
-@section('title') Testimonial @endsection
+@section('title') Testimonials @endsection
 @section('content')
-    @include('ui::admin.data-table')
+@inject('testimonials', 'Modules\Admin\DataGrids\TestimonialsDataGrid')
+{{$testimonials->render()}}
 @endsection

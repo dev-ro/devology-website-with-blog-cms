@@ -19,7 +19,7 @@ class EnquireFormSend extends Mailable
      */
     public $name;
     public $email;
-    public $message;
+    public $msg;
     public $phone;
 
     /**
@@ -27,11 +27,11 @@ class EnquireFormSend extends Mailable
      *
      * @return void
      */
-    public function __construct($name, $email, $message, $phone)
+    public function __construct($name, $email, $msg, $phone)
     {
         $this->name = $name;
         $this->email = $email;
-        $this->message = $message;
+        $this->msg = $msg;
         $this->phone = $phone;
     }
 
@@ -45,7 +45,7 @@ class EnquireFormSend extends Mailable
         return $this->view('mails.enquireform')->with([
             'sender_name'       =>  $this->name,
             'sender_email'      =>  $this->email,
-            'sender_message'    =>  $this->message,
+            'sender_message'    =>  $this->msg,
             'sender_phone'    =>  $this->phone,
         ]);
     }

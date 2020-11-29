@@ -14,25 +14,25 @@ class EnquiryController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'message' => 'required',
+            'msg' => 'required',
             'phone' => 'required'
         ]); 
 
         // Send Mail
-        $send = Mail::to('info@gmail.com')->send(new EnquireFormSend($validated['name'], $validated['email'], $validated['message'], $validated['phone']));
+        $send = Mail::to('info@gmail.com')->send(new EnquireFormSend($validated['name'], $validated['email'], $validated['msg'], $validated['phone']));
 
         Enquiry::create([
             'name'      => $validated['name'],
             'email'     => $validated['email'],
-            'message'   => $validated['message'],
+            'message'   => $validated['msg'],
             'phone'   =>    $request->phone,
             'url'       => url()->previous(),
-            'type'      => $request->category
+            'type'      => $request->cat
         ]);
 
         if($request->wantsJson()) {
             return response()->json([
-                'success' , 'We will be in touch as soon as possible'
+                'We will be in touch as soon as possible'
             ], 200);
         } 
         return response()->json([

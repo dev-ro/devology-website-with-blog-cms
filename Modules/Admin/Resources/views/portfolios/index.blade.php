@@ -1,7 +1,9 @@
 @extends('admin::layouts.master')
 @section('title') Portfolios @endsection
 @section('content')
-<div class="card">
+@inject('portfolios', 'Modules\Admin\DataGrids\PortfoliosDataGrid')
+{{$portfolios->render()}}
+{{-- <div class="card">
     <div class="card-header">
       <div class="row">
           <div class="col-md-7">
@@ -52,5 +54,5 @@
     <div class="card-footer">
         {{ $portfolios->links('vendor.pagination.bootstrap-4')}}
     </div>
-  </div>
+</div> --}}
 @endsection
