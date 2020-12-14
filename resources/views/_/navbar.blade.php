@@ -10,7 +10,9 @@
                    <h3>{{$company_settings->company_name}}</h3>
                @endif
             </a>
+
             <div class="ml-auto"></div>
+            
             <!-- Navbar -->
             <ul class="navbar-nav items">
                 <li class="nav-item">
@@ -21,19 +23,13 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="{{route('services-index')}}">Services <i class="fas fa-angle-down ml-1"></i></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" style="
+                    overflow-y: scroll;
+                    height: 400px;
+                ">
                        @foreach ($company_services as $service)
                        <li class="nav-item"> <a class="nav-link" href="{{route('service-detail' , $service->slug)}}">{{$service->name}}</a></li>
                        @endforeach
-                        {{-- <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">Blog Grid <i class="fas fa-angle-right ml-1"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a href="blog-two-column.html" class="nav-link">Grid 2 Column</a></li>
-                                <li class="nav-item"><a href="blog-three-column.html" class="nav-link">Grid 3 Column</a></li>
-                                <li class="nav-item"><a href="blog-left-sidebar.html" class="nav-link">Left Sidebar</a></li>
-                                <li class="nav-item"><a href="blog-right-sidebar.html" class="nav-link">Right Sidebar</a></li>
-                            </ul>
-                        </li> --}}
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -43,6 +39,7 @@
                     <a class="nav-link" href="{{route('portfolio-index')}}">Our Portfolio</a>
                 </li>
             </ul>
+
             <!-- Navbar Icons -->
             <ul class="navbar-nav icons">
                 <li class="nav-item">
@@ -51,6 +48,7 @@
                     </a>
                 </li>
             </ul>
+
             <!-- Navbar Toggler -->
             <ul class="navbar-nav toggle">
                 <li class="nav-item">
@@ -59,12 +57,14 @@
                     </a>
                 </li>
             </ul>
+
             <!-- Navbar Action Button -->
             <ul class="navbar-nav action">
                 <li class="nav-item ml-3">
                     <a href="{{route('pages_contact')}}" class="btn ml-lg-auto"><i class="fas fa-paper-plane contact-icon mr-md-2"></i>Contact Us</a>
                 </li>
             </ul>
+            
         </div>
     </nav>
 </header>
