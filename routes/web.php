@@ -22,3 +22,9 @@ Route::post('/search' , 'SearchController@searchBy')->name('search');
 
 // Enquiry Controller
 Route::post('enquire' , 'EnquiryController@enquire')->name('enquire');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes([
+    'register' => false,
+]);

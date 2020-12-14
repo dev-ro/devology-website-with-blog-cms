@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('admin/')->group(function() {
+Route::prefix('admin/')->middleware('auth')->group(function() {
 
     Route::get('/' , 'AdminController@redirectToLogin');
     Route::get('/dashboard', 'AdminController@index')->name('dashboard-home');  
